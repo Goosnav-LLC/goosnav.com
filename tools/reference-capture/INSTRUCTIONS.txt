@@ -1,0 +1,79 @@
+REFERENCE CAPTURE (Playwright) — Goosnav Theme Repo
+===================================================
+
+What this is
+------------
+This repo uses a Node.js script (tools/reference-capture/capture.mjs) to load frozen Wayback URLs,
+hide the Wayback toolbar overlays, and export:
+- PNG screenshots to reference/screenshots/
+- HTML snapshots to reference/html/
+- a run log to reference/notes/CAPTURE_LOG.md
+
+This is NOT a compiled program. It's interpreted at runtime by Node (analogous to running python scripts).
+
+Directory layout
+----------------
+tools/reference-capture/capture.mjs     (the capture program)
+tools/reference-capture/targets.json    (the frozen capture job list)
+reference/screenshots/                  (generated PNG outputs)
+reference/html/                         (generated HTML outputs)
+reference/notes/CAPTURE_LOG.md          (generated log)
+
+One-time setup (macOS)
+----------------------
+From repo root:
+  npm i -D playwright
+  npx playwright install
+
+Ensure package.json contains:
+  "ref:capture": "node tools/reference-capture/capture.mjs tools/reference-capture/targets.json"
+
+Run capture
+-----------
+From repo root:
+  npm run ref:capture
+
+Debug mode (visible browser window)
+----------------------------------
+  HEADLESS=0 npm run ref:capture
+
+Verify outputs
+--------------
+  ls -lah reference/screenshots
+  ls -lah reference/html
+  sed -n '1,200p' reference/notes/CAPTURE_LOG.md
+
+Common failure modes
+--------------------
+1) Invalid URL:
+   - CAPTURE_LOG.md will show: "Cannot navigate to invalid URL"
+   Fix:
+   - targets.json job.url must be a real Wayback URL:
+     https://web.archive.org/web/<timestamp>/<original_url>
+
+2) Overwriting HTML:
+   Fix:
+   - Each job must have a unique "html" path (and a unique screenshot path).
+   - The capture script now throws if duplicates exist.
+
+3) Timeout / page flakiness:
+   Fix:
+   - Change the Wayback snapshot timestamp to another capture that returns 200.
+   - Re-run.
+
+Adding new pages
+----------------
+Edit tools/reference-capture/targets.json:
+- Add a new job object with:
+  id, url, viewport, screenshot, saveHtml:true, html, optional fullPage:true|false
+
+Commit policy
+-------------
+Commit:
+- tools/reference-capture/*
+- reference/screenshots/*.png
+- reference/html/*.html
+- reference/notes/CAPTURE_LOG.md
+
+Do not commit:
+- node_modules/

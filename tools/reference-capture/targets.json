@@ -1,0 +1,40 @@
+{
+  "jobs": [
+    {
+      "id": "youtube2007_home_1440",
+      "url": "https://web.archive.org/web/20070715/http://www.youtube.com/",
+      "viewport": { "width": 1440, "height": 900 },
+      "screenshot": "reference/screenshots/youtube2007_home_1440.png",
+      "saveHtml": true,
+      "html": "reference/html/youtube2007_home.html",
+      "fullPage": false
+    },
+    {
+      "id": "youtube2007_search_1440",
+      "url": "https://web.archive.org/web/20070901/http://www.youtube.com/results?search_query=test",
+      "viewport": { "width": 1440, "height": 900 },
+      "screenshot": "reference/screenshots/youtube2007_search_1440.png",
+      "saveHtml": true,
+      "html": "reference/html/youtube2007_search.html",
+      "fullPage": false
+    },
+    {
+      "id": "ebay2004_home_1440",
+      "url": "https://web.archive.org/web/20040901024833/http://www.ebay.com/",
+      "viewport": { "width": 1440, "height": 900 },
+      "screenshot": "reference/screenshots/ebay2004_home_1440.png",
+      "saveHtml": true,
+      "html": "reference/html/ebay2004_home.html",
+      "fullPage": false
+    },
+    {
+      "id": "ebay2004_browse_1440",
+      "url": "https://web.archive.org/web/20040812162135/http://pages.ebay.com/buy/index.html?ssPageName=h:h:cat:US",
+      "viewport": { "width": 1440, "height": 900 },
+      "screenshot": "reference/screenshots/ebay2004_browse_1440.png",
+      "saveHtml": true,
+      "html": "reference/html/ebay2004_browse.html",
+      "fullPage": false
+    }
+  ]
+}
