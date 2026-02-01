@@ -1,0 +1,1350 @@
+/**
+ * Y2K Design Tokens - AGGRESSIVE Early 2000s Aesthetic
+ * YouTube 2007 / eBay 2008 / Old Web Style
+ * This should look like it was pulled from archive.org
+ */
+
+:root {
+  /* Typography - Old-web system stack */
+  --font-body-family: Verdana, Geneva, Tahoma, sans-serif;
+  --font-heading-family: Arial, Helvetica, sans-serif;
+  --font-body-size: 11px;
+
+  /* Classic web link colors - TRUE browser defaults */
+  --color-link: 0, 0, 238; /* #0000EE - true browser default blue */
+  --y2k-link-visited: 85, 26, 139; /* #551A8B - true visited purple */
+  --y2k-link-hover: 204, 51, 51; /* #CC3333 - accent red on hover */
+
+  /* UI Grays - the classic web palette */
+  --y2k-white: #ffffff;
+  --y2k-gray-lightest: #f7f7f7;
+  --y2k-gray-light: #eeeeee;
+  --y2k-gray-medium: #cccccc;
+  --y2k-gray-dark: #999999;
+  --y2k-gray-darker: #666666;
+  --y2k-gray-darkest: #333333;
+
+  /* YouTube 2007 Tab Colors - EXACT match */
+  --y2k-tab-red: #cc0000;
+  --y2k-tab-orange: #ff9900; /* YouTube 2007 exact orange */
+  --y2k-tab-green: #009900; /* YouTube 2007 exact green */
+  --y2k-tab-blue: #0066cc; /* YouTube 2007 exact blue */
+  --y2k-tab-gray: #666666;
+
+  /* Accent colors */
+  --y2k-accent-red: #CC3333; /* Spec compliant, not #CC0000 */
+  --y2k-accent-yellow: #ffcc00;
+  --y2k-star-yellow: #fc0;
+
+  /* Zero radius - EVERYTHING sharp */
+  --buttons-radius: 0px;
+  --buttons-radius-outset: 0px;
+  --inputs-radius: 0px;
+  --inputs-radius-outset: 0px;
+  --variant-pills-radius: 0px;
+  --media-radius: 0px;
+  --product-card-corner-radius: 0rem;
+  --collection-card-corner-radius: 0rem;
+  --blog-card-corner-radius: 0rem;
+  --badge-corner-radius: 0rem;
+  --popup-corner-radius: 0px;
+  --text-boxes-radius: 0px;
+
+  /* Zero shadows - flat 2000s look */
+  --buttons-shadow-opacity: 0;
+  --buttons-shadow-visible: 0;
+  --inputs-shadow-opacity: 0;
+  --media-shadow-opacity: 0;
+  --media-shadow-visible: 0;
+  --product-card-shadow-opacity: 0;
+  --product-card-shadow-visible: 0;
+  --collection-card-shadow-opacity: 0;
+  --collection-card-shadow-visible: 0;
+  --blog-card-shadow-opacity: 0;
+  --blog-card-shadow-visible: 0;
+  --popup-shadow-opacity: 0;
+  --drawer-shadow-opacity: 0;
+  --text-boxes-shadow-opacity: 0;
+  --text-boxes-shadow-visible: 0;
+  --variant-pills-shadow-opacity: 0;
+
+  /* CRAMPED spacing - early web was dense */
+  --spacing-sections-desktop: 12px;
+  --spacing-sections-mobile: 8px;
+  --grid-desktop-vertical-spacing: 0px;
+  --grid-desktop-horizontal-spacing: 0px;
+  --grid-mobile-vertical-spacing: 0px;
+  --grid-mobile-horizontal-spacing: 0px;
+
+  /* Dawn overrides */
+  --page-width: 960px;
+  --buttons-border-width: 1px;
+  --buttons-border-opacity: 1;
+  --inputs-border-width: 1px;
+  --inputs-border-opacity: 1;
+}
+
+/* ==========================================================================
+   GLOBAL RESET - Kill all modern styling
+   ========================================================================== */
+
+* {
+  border-radius: 0 !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: auto !important;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  color: var(--y2k-gray-darkest) !important;
+  background: var(--y2k-white) !important;
+}
+
+/* ==========================================================================
+   LINKS - Classic Blue Underlined EVERYWHERE
+   ========================================================================== */
+
+a {
+  color: #0000ee !important; /* TRUE browser default blue */
+  text-decoration: underline !important;
+}
+
+a:visited {
+  color: #551a8b !important; /* TRUE visited purple */
+}
+
+a:hover {
+  color: #CC3333 !important;
+  text-decoration: underline !important;
+}
+
+/* Kill all pseudo-element decorations */
+a::before,
+a::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY - Tiny and Dense
+   ========================================================================== */
+
+h1, .h1, .title--primary {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: var(--y2k-gray-darkest) !important;
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+}
+
+h2, .h2 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  color: var(--y2k-gray-darkest) !important;
+  margin: 0 0 6px 0 !important;
+}
+
+h3, .h3 {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  color: var(--y2k-gray-darkest) !important;
+}
+
+p, .rte, .rte p {
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+small, .small {
+  font-size: 10px !important;
+}
+
+/* ==========================================================================
+   BUTTONS - Win95 3D Beveled Style
+   ========================================================================== */
+
+.button,
+.shopify-payment-button__button,
+button[type="submit"],
+.cart__checkout-button,
+.btn {
+  font-family: Verdana, Geneva, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: normal !important;
+  padding: 4px 12px !important;
+  min-height: 0 !important;
+  height: auto !important;
+
+  /* True Win95 3D bevel - light top/left, dark bottom/right */
+  border-width: 2px !important;
+  border-style: solid !important;
+  border-color: #ffffff #808080 #808080 #ffffff !important;
+
+  background: linear-gradient(to bottom, #e8e8e8 0%, #c0c0c0 100%) !important;
+  color: #333 !important;
+  cursor: pointer;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.button:hover,
+.shopify-payment-button__button:hover,
+button[type="submit"]:hover,
+.cart__checkout-button:hover {
+  background: linear-gradient(to bottom, #f0f0f0 0%, #d0d0d0 100%) !important;
+  border-color: #ffffff #666666 #666666 #ffffff !important;
+}
+
+.button:active,
+.shopify-payment-button__button:active,
+button[type="submit"]:active {
+  /* Inverted borders when pressed - creates pressed-in effect */
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  background: linear-gradient(to bottom, #c0c0c0 0%, #e8e8e8 100%) !important;
+}
+
+.button:focus,
+.shopify-payment-button__button:focus,
+button[type="submit"]:focus,
+.cart__checkout-button:focus {
+  /* Windows 95 dotted focus outline */
+  outline: 1px dotted #000000 !important;
+  outline-offset: -4px !important;
+}
+
+/* Text link style buttons - like old "Add to Cart" links */
+.button--link,
+.link {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #0000ee !important; /* TRUE browser default blue */
+  text-decoration: underline !important;
+  font-size: 11px !important;
+}
+
+.button--link:hover,
+.link:hover {
+  color: #CC3333 !important;
+}
+
+/* ==========================================================================
+   INPUT FIELDS - Recessed 3D Inset (Win95 Style)
+   ========================================================================== */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+textarea,
+select,
+.field__input {
+  font-family: Verdana, Geneva, sans-serif !important;
+  font-size: 11px !important;
+  padding: 3px 5px !important;
+  min-height: 0 !important;
+  height: auto !important;
+
+  /* Strong inset - dark top/left, light bottom/right */
+  border-width: 2px !important;
+  border-style: solid !important;
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+
+  box-shadow: inset 2px 2px 3px rgba(0,0,0,0.15) !important;
+  background: #ffffff !important;
+  color: #333 !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+.field__input:focus {
+  /* Windows 95 dotted focus outline */
+  outline: 1px dotted #000000 !important;
+  outline-offset: -3px !important;
+  border-color: #000000 #e0e0e0 #e0e0e0 #000000 !important;
+}
+
+/* Remove floating labels */
+.field__label {
+  position: static !important;
+  transform: none !important;
+  font-size: 11px !important;
+  opacity: 1 !important;
+  margin-bottom: 2px !important;
+  display: block !important;
+}
+
+/* ==========================================================================
+   FOCUS STATES - Windows 95 Dotted Outline (Universal)
+   ========================================================================== */
+
+/* Universal focus for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible,
+.card__heading a:focus-visible {
+  outline: 1px dotted #000000 !important;
+  outline-offset: 2px !important;
+}
+
+/* Remove modern focus styles */
+*:focus {
+  box-shadow: none !important;
+}
+
+/* Link focus in cards and menus - yellow highlight like Windows */
+.card a:focus-visible,
+.menu-drawer__menu-item:focus-visible,
+.list-menu__item:focus-visible {
+  outline: 1px dotted #000000 !important;
+  outline-offset: 1px !important;
+  background-color: #ffffcc !important; /* Yellow highlight like Windows */
+}
+
+/* ==========================================================================
+   HEADER - Gradient Toolbar with Colored Tabs
+   ========================================================================== */
+
+.section-header {
+  margin-bottom: 0 !important;
+}
+
+.header-wrapper {
+  background: #FFFFFF !important; /* eBay 2004 pure white */
+  border-bottom: 1px solid #ccc !important;
+  padding: 0 !important;
+}
+
+.header {
+  padding: 6px 10px !important;
+  gap: 10px !important;
+  min-height: 0 !important;
+}
+
+/* Consistent spacing between header elements */
+.header > * {
+  margin: 0 !important;
+}
+
+.header__heading {
+  margin-right: auto !important;
+}
+
+.header__inline-menu {
+  margin: 0 auto !important;
+}
+
+/* Explicit header text color - eBay 2004 dark text on white */
+.header,
+.header * {
+  color: #333333 !important;
+}
+
+/* Override for navigation tabs */
+.header__menu-item,
+.header__menu-item * {
+  color: inherit !important;
+}
+
+/* Logo - smaller */
+.header__heading-link {
+  text-decoration: none !important;
+}
+
+.header__heading-logo {
+  max-height: 30px !important;
+  width: auto !important;
+}
+
+.header__heading .h2 {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  color: #333 !important;
+  text-decoration: none !important;
+}
+
+/* Navigation - Colored Tab Bar */
+.header__inline-menu {
+  margin: 0 !important;
+}
+
+.header__inline-menu .list-menu--inline {
+  gap: 2px !important;
+}
+
+.header__menu-item {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  padding: 4px 12px !important;
+  margin: 0 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0 !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+/* Navigation - eBay 2004 Dark Blue Tab Bar */
+.header__inline-menu .list-menu--inline > li .header__menu-item {
+  background: #003D7A !important; /* eBay 2004 dark blue */
+  color: #FFFFFF !important;
+  border-right: 1px solid #002952 !important;
+  padding: 6px 12px !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+}
+
+.header__inline-menu .list-menu--inline > li:last-child .header__menu-item {
+  border-right: none !important;
+}
+
+.header__inline-menu .list-menu--inline > li .header__menu-item:hover {
+  background: #0052A3 !important; /* Lighter blue hover */
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.header__inline-menu .list-menu--inline > li .header__menu-item.active,
+.header__inline-menu .list-menu--inline > li.active .header__menu-item {
+  background: #FFFFFF !important;
+  color: #003D7A !important;
+  border-bottom: 3px solid #003D7A !important;
+  font-weight: bold !important;
+}
+
+.header__menu-item span {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Dropdown menus */
+.header__submenu,
+.mega-menu__content {
+  background: #fff !important;
+  border: 1px solid #999 !important;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.2) !important;
+  padding: 5px 0 !important;
+}
+
+.header__submenu .header__menu-item,
+.mega-menu__link {
+  background: transparent !important;
+  color: #0000cc !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  padding: 3px 10px !important;
+  display: block !important;
+}
+
+.header__submenu .header__menu-item:hover,
+.mega-menu__link:hover {
+  background: #eee !important;
+  color: #CC3333 !important;
+  opacity: 1 !important;
+}
+
+/* Header icons - tiny */
+.header__icon {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.header__icon svg {
+  width: 16px !important;
+  height: 16px !important;
+  display: block !important;
+}
+
+.header__icon:hover {
+  opacity: 0.7;
+}
+
+/* SVG wrapper sizing - ensure consistent icon display */
+.header .svg-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.header .svg-wrapper svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* CRITICAL: Fix header icons container vertical alignment */
+.header__icons {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Cart count */
+.cart-count-bubble {
+  background: var(--y2k-tab-red) !important;
+  color: #fff !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  padding: 2px 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  text-align: center !important;
+}
+
+/* ==========================================================================
+   INLINE SEARCH - Old Web Style
+   ========================================================================== */
+
+.y2k-search-inline {
+  display: none;
+}
+
+@media screen and (min-width: 990px) {
+  .header__icon--search.header__icon--summary {
+    display: none !important;
+  }
+
+  .y2k-search-inline {
+    display: flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+  }
+}
+
+.y2k-search-inline__input {
+  width: 150px !important;
+  height: 20px !important;
+  padding: 2px 5px !important;
+  font-size: 11px !important;
+  background: #fff !important;
+  border: 1px solid #999 !important;
+  border-top-color: #666 !important;
+  border-left-color: #666 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+}
+
+.y2k-search-inline__button {
+  height: 20px !important;
+  padding: 0 8px !important;
+  font-size: 10px !important;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #ddd 100%) !important;
+  border: 1px solid #999 !important;
+  color: #333 !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.y2k-search-inline__button:hover {
+  background: linear-gradient(to bottom, #fff 0%, #eee 100%) !important;
+}
+
+.y2k-search-inline__button:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  background: linear-gradient(to bottom, #ddd 0%, #f5f5f5 100%) !important;
+}
+
+.y2k-search-inline__input:focus {
+  outline: 1px dotted #000000 !important;
+  outline-offset: -3px !important;
+  border-color: #000000 #e0e0e0 #e0e0e0 #000000 !important;
+}
+
+/* ==========================================================================
+   PAGE LAYOUT - Constrained Width, Visible Structure
+   ========================================================================== */
+
+.page-width {
+  max-width: 960px !important;
+  padding: 0 10px !important;
+}
+
+.shopify-section {
+  background: #fff !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Main content area with border */
+main {
+  background: #fff !important;
+}
+
+.gradient {
+  background: #fff !important;
+}
+
+/* ==========================================================================
+   COLLECTION PAGE - Table-Based Layout
+   ========================================================================== */
+
+/* Wrapper with visible border */
+.collection {
+  border: 1px solid #ccc !important;
+  background: #fff !important;
+  margin: 10px 0 !important;
+}
+
+/* Sidebar + Content Grid */
+.facets-vertical {
+  display: grid !important;
+  grid-template-columns: 160px 1fr !important;
+  gap: 0 !important;
+  border: none !important;
+}
+
+/* Left Sidebar - Filter Panel */
+.facets-wrapper {
+  background: #f0f0f0 !important;
+  border-right: 1px solid #ccc !important;
+  padding: 8px !important;
+}
+
+.facets-wrapper--no-filters {
+  display: none !important;
+}
+
+/* Filter section headers */
+.facets__heading,
+.facets__summary {
+  font-family: Arial, sans-serif !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  color: #333 !important;
+  padding: 4px 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #ccc !important;
+  background: #e0e0e0 !important;
+  padding-left: 5px !important;
+}
+
+.facets__disclosure {
+  border-bottom: 1px solid #ddd !important;
+  margin-bottom: 0 !important;
+  padding: 5px 0 !important;
+}
+
+/* Filter links */
+.facet-checkbox,
+.facets__item {
+  font-size: 10px !important;
+  padding: 2px 0 !important;
+}
+
+.facet-checkbox__text,
+.facets__item a {
+  color: #0000cc !important;
+  text-decoration: none !important;
+}
+
+.facet-checkbox__text:hover,
+.facets__item a:hover {
+  text-decoration: underline !important;
+  color: #CC3333 !important;
+}
+
+/* Active filter */
+.facet-checkbox input:checked + .facet-checkbox__text {
+  font-weight: bold !important;
+}
+
+/* Sort bar above products */
+.facets-vertical-sort {
+  background: #e8e8e8 !important;
+  border-bottom: 1px solid #ccc !important;
+  padding: 5px 10px !important;
+}
+
+.facet-filters__label {
+  font-size: 10px !important;
+  font-weight: bold !important;
+}
+
+.facet-filters__sort {
+  font-size: 10px !important;
+  padding: 2px 5px !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Product count */
+.product-count-vertical,
+.product-count {
+  font-size: 10px !important;
+  color: #666 !important;
+}
+
+/* ==========================================================================
+   PRODUCT GRID - Table Rows with Borders
+   ========================================================================== */
+
+.product-grid-container {
+  padding: 0 !important;
+}
+
+.product-grid {
+  display: table !important;
+  width: 100% !important;
+  border-collapse: collapse !important;
+}
+
+.product-grid .grid__item {
+  display: table-row !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Alternating row colors */
+.product-grid .grid__item:nth-child(odd) {
+  background: #fff !important;
+}
+
+.product-grid .grid__item:nth-child(even) {
+  background: #f5f5f5 !important;
+}
+
+.product-grid .grid__item:hover {
+  background: #ffffcc !important; /* Yellow highlight on hover - very 2000s */
+}
+
+/* Card becomes table row */
+.product-grid .card-wrapper {
+  display: table-cell !important;
+  vertical-align: top !important;
+  padding: 6px 8px !important;
+  border-bottom: 1px solid #ccc !important;
+  background: transparent !important;
+}
+
+.product-grid .card {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  gap: 8px !important;
+}
+
+/* Thumbnail - Small with visible border */
+.product-grid .card__inner {
+  flex: 0 0 auto !important;
+  width: 80px !important;
+  height: 60px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 1px solid #999 !important;
+  overflow: hidden !important;
+}
+
+.product-grid .card__media {
+  width: 80px !important;
+  height: 60px !important;
+}
+
+.product-grid .card__media .media {
+  width: 80px !important;
+  height: 60px !important;
+  padding: 0 !important;
+}
+
+.product-grid .card__media img {
+  width: 80px !important;
+  height: 60px !important;
+  object-fit: cover !important;
+}
+
+/* Hide secondary image */
+.product-grid .card__media img:nth-child(2) {
+  display: none !important;
+}
+
+/* Content */
+.product-grid .card > .card__content {
+  flex: 1 1 auto !important;
+  display: block !important;
+  padding: 0 !important;
+}
+
+.product-grid .card__information {
+  display: block !important;
+}
+
+/* Product Title - Blue link */
+.product-grid .card__heading {
+  margin: 0 0 3px 0 !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  line-height: 1.2 !important;
+}
+
+.product-grid .card__heading a {
+  color: #0000cc !important;
+  text-decoration: none !important;
+}
+
+.product-grid .card__heading a:hover {
+  text-decoration: underline !important;
+  color: #CC3333 !important;
+}
+
+/* Metadata row */
+.product-grid .card-information {
+  font-size: 10px !important;
+  color: #666 !important;
+  line-height: 1.3 !important;
+  margin-top: 3px !important;
+}
+
+/* Price */
+.product-grid .price {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  color: #333 !important;
+  margin: 0 !important;
+}
+
+.product-grid .price-item--sale {
+  color: #CC3333 !important;
+}
+
+.product-grid .price-item--regular.price-item--last {
+  text-decoration: line-through !important;
+  color: #999 !important;
+  font-weight: normal !important;
+}
+
+/* Vendor */
+.product-grid .caption-with-letter-spacing {
+  font-size: 10px !important;
+  color: #666 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Hide badges on grid - or style them */
+.product-grid .card__badge {
+  position: static !important;
+  display: inline !important;
+  margin-left: 5px !important;
+}
+
+.product-grid .badge {
+  font-size: 9px !important;
+  padding: 1px 4px !important;
+  background: #cc0000 !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+}
+
+/* Hide inner duplicate content */
+.product-grid .card__inner .card__content {
+  display: none !important;
+}
+
+/* Quick add button */
+.product-grid .quick-add {
+  margin-top: 3px !important;
+}
+
+.product-grid .quick-add__submit {
+  font-size: 10px !important;
+  padding: 2px 8px !important;
+  min-height: 0 !important;
+}
+
+/* ==========================================================================
+   PAGINATION - Numbered Links
+   ========================================================================== */
+
+.pagination-wrapper {
+  padding: 10px !important;
+  border-top: 1px solid #ccc !important;
+  background: #f5f5f5 !important;
+  text-align: center !important;
+}
+
+.pagination__list {
+  gap: 3px !important;
+  justify-content: center !important;
+}
+
+.pagination__item {
+  font-size: 10px !important;
+  min-width: 20px !important;
+  min-height: 18px !important;
+  padding: 2px 5px !important;
+  background: #fff !important;
+  border: 1px solid #999 !important;
+  color: #0000cc !important;
+}
+
+.pagination__item:hover {
+  background: #eee !important;
+  color: #CC3333 !important;
+}
+
+.pagination__item--current {
+  background: #333 !important;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+
+.pagination__item--current:hover {
+  background: #333 !important;
+  color: #fff !important;
+}
+
+.pagination__item-arrow svg {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+/* ==========================================================================
+   PRODUCT PAGE - Dense Info Panel
+   ========================================================================== */
+
+.product {
+  display: grid !important;
+  grid-template-columns: 300px 1fr !important;
+  gap: 15px !important;
+  padding: 10px !important;
+  border: 1px solid #ccc !important;
+  background: #fff !important;
+}
+
+.product__media-wrapper {
+  border: 1px solid #999 !important;
+}
+
+.product__info-wrapper {
+  padding: 0 !important;
+}
+
+.product__title {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  margin: 0 0 8px 0 !important;
+  color: #333 !important;
+}
+
+.product__text {
+  font-size: 11px !important;
+  color: #666 !important;
+}
+
+/* Price on product page */
+.price-container .price {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  color: #CC3333 !important;
+}
+
+/* Variant picker */
+.variant-picker__label {
+  font-size: 11px !important;
+  font-weight: bold !important;
+}
+
+.variant-picker__option {
+  font-size: 11px !important;
+  padding: 3px 8px !important;
+  border: 1px solid #999 !important;
+  background: #f5f5f5 !important;
+}
+
+.variant-picker__option:hover,
+.variant-picker__option.selected {
+  background: #fff !important;
+  border-color: #333 !important;
+}
+
+/* Quantity */
+.quantity {
+  border: 1px solid #999 !important;
+}
+
+.quantity__input {
+  font-size: 11px !important;
+  width: 40px !important;
+  text-align: center !important;
+}
+
+.quantity__button {
+  font-size: 14px !important;
+  padding: 2px 8px !important;
+  background: #eee !important;
+  border: none !important;
+  border-left: 1px solid #999 !important;
+}
+
+.quantity__button:first-child {
+  border-left: none !important;
+  border-right: 1px solid #999 !important;
+}
+
+/* ==========================================================================
+   CART PAGE - Table Style
+   ========================================================================== */
+
+.cart-items {
+  border: 1px solid #ccc !important;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ccc !important;
+  padding: 8px !important;
+  background: #fff !important;
+}
+
+.cart-item:nth-child(even) {
+  background: #f9f9f9 !important;
+}
+
+.cart-item__image {
+  width: 60px !important;
+  height: 60px !important;
+  border: 1px solid #999 !important;
+}
+
+.cart-item__name {
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+
+.cart-item__name a {
+  color: #0000cc !important;
+}
+
+.cart-item__details {
+  font-size: 10px !important;
+  color: #666 !important;
+}
+
+.cart-item__price {
+  font-size: 11px !important;
+  font-weight: bold !important;
+}
+
+/* Cart totals */
+.cart__footer {
+  background: #f0f0f0 !important;
+  border: 1px solid #ccc !important;
+  padding: 10px !important;
+}
+
+.totals {
+  font-size: 11px !important;
+}
+
+.totals__total {
+  font-size: 14px !important;
+  font-weight: bold !important;
+}
+
+/* ==========================================================================
+   FOOTER - Simple Gray Bar
+   ========================================================================== */
+
+.footer {
+  background: #e8e8e8 !important;
+  border-top: 1px solid #ccc !important;
+  padding: 10px !important;
+  margin-top: 15px !important;
+}
+
+.footer__content-top,
+.footer__content-bottom {
+  padding: 5px 0 !important;
+}
+
+.footer a {
+  font-size: 10px !important;
+  color: #0000cc !important;
+}
+
+.footer__copyright {
+  font-size: 9px !important;
+  color: #666 !important;
+}
+
+/* ==========================================================================
+   UTILITIES - Kill Modern Animations
+   ========================================================================== */
+
+/* No transitions */
+* {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* No smooth scroll */
+html {
+  scroll-behavior: auto !important;
+}
+
+/* Remove reveal animations */
+.scroll-trigger {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.animate--slide-in,
+.animate--fade-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ==========================================================================
+   BREADCRUMBS - Old School
+   ========================================================================== */
+
+.breadcrumbs {
+  font-size: 10px !important;
+  padding: 5px 10px !important;
+  background: #f5f5f5 !important;
+  border-bottom: 1px solid #ccc !important;
+}
+
+.breadcrumbs a {
+  color: #0000cc !important;
+}
+
+.breadcrumbs__separator::before {
+  content: " >> " !important;
+  color: #999 !important;
+}
+
+/* ==========================================================================
+   ICONS - Smaller and Simpler
+   ========================================================================== */
+
+.icon,
+svg.icon {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* ==========================================================================
+   FORMS - Compact
+   ========================================================================== */
+
+.form__label {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  margin-bottom: 3px !important;
+}
+
+.field {
+  margin-bottom: 8px !important;
+}
+
+/* ==========================================================================
+   MOBILE - Even Denser
+   ========================================================================== */
+
+@media screen and (max-width: 989px) {
+  body {
+    font-size: 10px !important;
+  }
+
+  .header {
+    padding: 6px 8px !important;
+  }
+
+  .header__menu-item {
+    font-size: 10px !important;
+    padding: 3px 8px !important;
+  }
+
+  .facets-vertical {
+    grid-template-columns: 1fr !important;
+  }
+
+  .facets-wrapper {
+    border-right: none !important;
+    border-bottom: 1px solid #ccc !important;
+  }
+
+  .product-grid .card__inner,
+  .product-grid .card__media,
+  .product-grid .card__media .media,
+  .product-grid .card__media img {
+    width: 60px !important;
+    height: 45px !important;
+  }
+
+  .product-grid .card-wrapper {
+    padding: 5px !important;
+  }
+
+  .product-grid .card__heading {
+    font-size: 11px !important;
+  }
+
+  .product {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-width {
+    padding: 0 5px !important;
+  }
+}
+
+/* ==========================================================================
+   STAR RATINGS - Yellow Stars (if using rating app)
+   ========================================================================== */
+
+.rating {
+  color: #fc0 !important;
+}
+
+.rating__stars {
+  font-size: 10px !important;
+}
+
+/* ==========================================================================
+   ANNOUNCEMENT BAR - Simple Top Bar
+   ========================================================================== */
+
+.announcement-bar {
+  background: var(--y2k-tab-red) !important;
+  padding: 3px 10px !important;
+  min-height: 0 !important;
+}
+
+.announcement-bar__message {
+  font-size: 10px !important;
+  color: #fff !important;
+}
+
+/* ==========================================================================
+   MISC OVERRIDES
+   ========================================================================== */
+
+/* Remove all motion/animation */
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Scrollbar styling - classic gray (webkit) */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #ddd, #bbb);
+  border: 1px solid #999;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to right, #ccc, #aaa);
+}
+
+/* Selection color */
+::selection {
+  background: #3399ff;
+  color: #fff;
+}
+
+/* ==========================================================================
+   MOBILE Y2K ADJUSTMENTS - Maintain Density
+   ========================================================================== */
+
+@media screen and (max-width: 749px) {
+  /* Tighter mobile spacing - maintain Y2K density */
+  body {
+    font-size: 11px !important;
+  }
+
+  .page-width {
+    padding: 0 8px !important;
+  }
+
+  /* Smaller mobile header */
+  .header {
+    padding: 5px 8px !important;
+  }
+
+  .header__heading-logo {
+    max-height: 24px !important;
+  }
+
+  /* Mobile tap targets - 32px minimum (acceptable for Y2K density) */
+  .button,
+  .menu-drawer__menu-item,
+  .list-menu__item {
+    min-height: 32px !important;
+    padding: 4px 10px !important;
+  }
+
+  /* Mobile tables - horizontal scroll rather than stack */
+  .cart-items,
+  .collection__grid {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Keep table layout on mobile for density */
+  .cart-item,
+  .product-grid__item {
+    display: table-row !important;
+    min-width: 100% !important;
+  }
+
+  /* Mobile section spacing - tight */
+  .section + .section {
+    margin-top: 8px !important;
+  }
+
+  /* Mobile inputs */
+  input,
+  select,
+  textarea {
+    font-size: 11px !important;
+    padding: 4px 6px !important;
+  }
+
+  /* Mobile cards */
+  .card {
+    margin-bottom: 8px !important;
+  }
+}

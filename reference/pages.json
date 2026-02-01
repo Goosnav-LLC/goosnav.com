@@ -1,0 +1,10 @@
+{
+    "baseURL": "http://127.0.0.1:9292",
+    "paths": [
+      "/",
+      "/collections/all",
+      "/cart",
+      "/search?q=The+Collection+Snowboard%3A+Hydrogen&options%5Bprefix%5D=last"
+    ],
+    "productPath": "/products/REPLACE_WITH_A_REAL_PRODUCT_HANDLE"
+}

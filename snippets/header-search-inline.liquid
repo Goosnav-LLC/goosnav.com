@@ -1,0 +1,46 @@
+{% comment %}
+  Renders an inline search form for the header (desktop only).
+  Hidden on mobile via CSS; mobile uses the modal search.
+
+  Usage:
+  {% render 'header-search-inline' %}
+{% endcomment %}
+
+<div class="y2k-search-inline">
+  {%- if settings.predictive_search_enabled -%}
+    <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
+  {%- endif -%}
+  <form action="{{ routes.search_url }}" method="get" role="search" class="y2k-search-inline__form">
+    <input
+      class="y2k-search-inline__input"
+      type="search"
+      name="q"
+      value="{{ search.terms | escape }}"
+      placeholder="{{ 'general.search.search' | t }}"
+      aria-label="{{ 'general.search.search' | t }}"
+      {%- if settings.predictive_search_enabled -%}
+        role="combobox"
+        aria-expanded="false"
+        aria-owns="predictive-search-results-inline"
+        aria-controls="predictive-search-results-inline"
+        aria-haspopup="listbox"
+        aria-autocomplete="list"
+        autocorrect="off"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+      {%- endif -%}
+    >
+    <input type="hidden" name="options[prefix]" value="last">
+    <button type="submit" class="y2k-search-inline__button">
+      {{ 'general.search.search' | t }}
+    </button>
+  </form>
+  {%- if settings.predictive_search_enabled -%}
+    <div class="predictive-search predictive-search--header" tabindex="-1" data-predictive-search id="predictive-search-results-inline">
+      {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+    </div>
+    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+    </predictive-search>
+  {%- endif -%}
+</div>

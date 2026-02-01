@@ -1,0 +1,246 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - region "Announcement" [ref=e6]:
+    - paragraph [ref=e7]: Welcome to our store
+  - banner [ref=e10]:
+    - heading "goosnav-y2k" [level=1] [ref=e11]:
+      - link "goosnav-y2k" [ref=e12] [cursor=pointer]:
+        - /url: /
+    - navigation [ref=e13]:
+      - list [ref=e14]:
+        - listitem [ref=e15]:
+          - link "Home" [ref=e16] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e17]: Home
+        - listitem [ref=e18]:
+          - link "Catalog" [ref=e19] [cursor=pointer]:
+            - /url: /collections/all
+            - generic [ref=e20]: Catalog
+        - listitem [ref=e21]:
+          - link "Contact" [ref=e22] [cursor=pointer]:
+            - /url: /pages/contact
+            - generic [ref=e23]: Contact
+    - generic [ref=e24]:
+      - generic [ref=e28]:
+        - heading "Country/region" [level=2] [ref=e29]
+        - button "United States | USD $" [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: United States | USD $
+          - img [ref=e33]
+      - generic [ref=e36]:
+        - search [ref=e37]:
+          - combobox "Search" [ref=e38]
+          - button "Search" [ref=e39] [cursor=pointer]
+        - status [ref=e40]
+      - generic [ref=e41]:
+        - group
+      - link "Log in" [ref=e42] [cursor=pointer]:
+        - /url: https://shopify.com/96088195345/account?locale=en&region_country=US
+        - img [ref=e45]
+        - generic [ref=e47]: Log in
+      - link "Cart" [ref=e48] [cursor=pointer]:
+        - /url: /cart
+        - img [ref=e50]
+        - generic [ref=e52]: Cart
+  - main [ref=e53]:
+    - generic [ref=e55]:
+      - img [ref=e57]
+      - generic [ref=e119]:
+        - heading "Image banner" [level=2] [ref=e120]
+        - paragraph [ref=e122]: Give customers details about the banner image(s) or content on the template.
+        - link "Shop all" [ref=e124] [cursor=pointer]:
+          - /url: /collections/all
+    - generic [ref=e129]:
+      - heading "Talk about your brand" [level=2] [ref=e130]
+      - paragraph [ref=e132]: Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.
+    - generic [ref=e135]:
+      - heading "Featured products" [level=2] [ref=e137]
+      - list "Slider" [ref=e139]:
+        - listitem [ref=e140]:
+          - generic [ref=e142]:
+            - 'img "Gift card that shows text: Generated data gift card" [ref=e146]'
+            - generic [ref=e147]:
+              - generic [ref=e148]:
+                - heading "Gift Card Sold out" [level=3] [ref=e149]:
+                  - link "Gift Card Sold out" [ref=e150] [cursor=pointer]:
+                    - /url: /products/gift-card
+                    - text: Gift Card
+                - generic [ref=e154]:
+                  - generic [ref=e155]: Regular price
+                  - generic [ref=e156]: From $10.00 USD
+              - generic [ref=e158]: Sold out
+        - listitem [ref=e159]:
+          - generic [ref=e161]:
+            - img "A bar of golden yellow wax" [ref=e165]
+            - generic [ref=e167]:
+              - heading "Selling Plans Ski Wax" [level=3] [ref=e168]:
+                - link "Selling Plans Ski Wax" [ref=e169] [cursor=pointer]:
+                  - /url: /products/selling-plans-ski-wax
+              - generic [ref=e173]:
+                - generic [ref=e174]: Regular price
+                - generic [ref=e175]: From $9.95 USD
+        - listitem [ref=e176]:
+          - generic [ref=e178]:
+            - img "Top and bottom view of a snowboard. The top view shows 7 stacked hexagons and the bottom view shows a small, centred hexagonal logo for Hydrogen." [ref=e182]
+            - generic [ref=e183]:
+              - generic [ref=e184]:
+                - heading "The 3p Fulfilled Snowboard Sold out" [level=3] [ref=e185]:
+                  - link "The 3p Fulfilled Snowboard Sold out" [ref=e186] [cursor=pointer]:
+                    - /url: /products/the-3p-fulfilled-snowboard
+                    - text: The 3p Fulfilled Snowboard
+                - generic [ref=e190]:
+                  - generic [ref=e191]: Regular price
+                  - generic [ref=e192]: $2,629.95 USD
+              - generic [ref=e194]: Sold out
+        - listitem [ref=e195]:
+          - generic [ref=e197]:
+            - img "Top and bottom view of a snowboard. The top view shows stylized hydrogen bonds and the bottom view shows \"H2\" in a brush script typeface." [ref=e201]
+            - generic [ref=e203]:
+              - 'heading "The Collection Snowboard: Hydrogen" [level=3] [ref=e204]':
+                - 'link "The Collection Snowboard: Hydrogen" [ref=e205] [cursor=pointer]':
+                  - /url: /products/the-collection-snowboard-hydrogen
+              - generic [ref=e209]:
+                - generic [ref=e210]: Regular price
+                - generic [ref=e211]: $600.00 USD
+        - listitem [ref=e212]:
+          - generic [ref=e214]:
+            - img "Top and bottom view of a snowboard. The top view shows a stylized scene of water, trees, mountains, sky and a moon in blue colours. The bottom view has a blue liquid, drippy background with the text \"liquid\" in a stylized script typeface." [ref=e218]
+            - generic [ref=e220]:
+              - 'heading "The Collection Snowboard: Liquid" [level=3] [ref=e221]':
+                - 'link "The Collection Snowboard: Liquid" [ref=e222] [cursor=pointer]':
+                  - /url: /products/the-collection-snowboard-liquid
+              - generic [ref=e226]:
+                - generic [ref=e227]: Regular price
+                - generic [ref=e228]: $749.95 USD
+        - listitem [ref=e229]:
+          - generic [ref=e231]:
+            - img "Top and bottom view of a snowboard. The top view shows a stylized scene of trees, mountains, sky and a sun in red colours. The bottom view has blue wavy lines in the background with the text \"Oxygen\" in a stylized script typeface." [ref=e235]
+            - generic [ref=e237]:
+              - 'heading "The Collection Snowboard: Oxygen" [level=3] [ref=e238]':
+                - 'link "The Collection Snowboard: Oxygen" [ref=e239] [cursor=pointer]':
+                  - /url: /products/the-collection-snowboard-oxygen
+              - generic [ref=e243]:
+                - generic [ref=e244]: Regular price
+                - generic [ref=e245]: $1,025.00 USD
+        - listitem [ref=e246]:
+          - generic [ref=e248]:
+            - img "Top and bottom view of a snowboard. The top view shows pixelated clouds, with the top-most one being the shape of the Shopify bag logo. The bottom view has a pixelated cloudy sky with blue, pink and purple colours." [ref=e252]
+            - generic [ref=e253]:
+              - generic [ref=e254]:
+                - heading "The Compare at Price Snowboard Sale" [level=3] [ref=e255]:
+                  - link "The Compare at Price Snowboard Sale" [ref=e256] [cursor=pointer]:
+                    - /url: /products/the-compare-at-price-snowboard
+                    - text: The Compare at Price Snowboard
+                - generic [ref=e260]:
+                  - generic [ref=e261]: Regular price
+                  - generic [ref=e263]: $885.95 USD
+                  - generic [ref=e264]: Sale price
+                  - generic [ref=e265]: $785.95 USD
+              - generic [ref=e267]: Sale
+        - listitem [ref=e268]:
+          - generic [ref=e270]:
+            - img "Top and bottom view of a snowboard. The top view shows abstract circles and lines in shades of teal. The bottom view shows abstract circles and lines in shades of purple and blue with the text “SHOPIFY” in a sans serif typeface on top." [ref=e274]
+            - generic [ref=e276]:
+              - heading "The Complete Snowboard" [level=3] [ref=e277]:
+                - link "The Complete Snowboard" [ref=e278] [cursor=pointer]:
+                  - /url: /products/the-complete-snowboard
+              - generic [ref=e282]:
+                - generic [ref=e283]: Regular price
+                - generic [ref=e284]: $699.95 USD
+    - generic [ref=e287]:
+      - heading "Multimedia collage" [level=2] [ref=e288]
+      - generic [ref=e289]:
+        - generic [ref=e292]:
+          - img [ref=e295]
+          - heading "Your collection's name" [level=3] [ref=e314]:
+            - link "Your collection's name" [disabled] [ref=e315]:
+              - text: Your collection's name
+              - img [ref=e317]
+        - generic [ref=e321]:
+          - img [ref=e325]
+          - generic [ref=e341]:
+            - heading "Example product title" [level=3] [ref=e342]:
+              - link "Example product title" [disabled] [ref=e343]
+            - generic [ref=e347]:
+              - generic [ref=e348]: Regular price
+              - generic [ref=e349]: $19.99 USD
+        - generic [ref=e352]:
+          - img [ref=e355]
+          - heading "Your collection's name" [level=3] [ref=e382]:
+            - link "Your collection's name" [disabled] [ref=e383]:
+              - text: Your collection's name
+              - img [ref=e385]
+    - button "Load video:" [ref=e391] [cursor=pointer]:
+      - img [ref=e392]
+      - img [ref=e438]
+    - list [ref=e444]:
+      - listitem [ref=e445]:
+        - generic [ref=e447]:
+          - heading "Column" [level=3] [ref=e448]
+          - paragraph [ref=e450]: Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.
+      - listitem [ref=e451]:
+        - generic [ref=e453]:
+          - heading "Column" [level=3] [ref=e454]
+          - paragraph [ref=e456]: Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.
+      - listitem [ref=e457]:
+        - generic [ref=e459]:
+          - heading "Column" [level=3] [ref=e460]
+          - paragraph [ref=e462]: Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.
+  - contentinfo [ref=e464]:
+    - generic [ref=e465]:
+      - generic [ref=e466]:
+        - generic [ref=e467]:
+          - heading "Quick links" [level=2] [ref=e468]
+          - list [ref=e469]:
+            - listitem [ref=e470]:
+              - link "Search" [ref=e471] [cursor=pointer]:
+                - /url: /search
+            - listitem [ref=e472]:
+              - link "Your Privacy Choices" [ref=e473] [cursor=pointer]:
+                - /url: /pages/data-sharing-opt-out
+        - generic [ref=e474]:
+          - heading "Info" [level=2] [ref=e475]
+          - list [ref=e476]:
+            - listitem [ref=e477]:
+              - link "Search" [ref=e478] [cursor=pointer]:
+                - /url: /search
+            - listitem [ref=e479]:
+              - link "Your Privacy Choices" [ref=e480] [cursor=pointer]:
+                - /url: /pages/data-sharing-opt-out
+        - generic [ref=e481]:
+          - heading "Our mission" [level=2] [ref=e482]
+          - paragraph [ref=e484]: Share contact information, store details, and brand content with your customers.
+      - generic [ref=e486]:
+        - heading "Subscribe to our emails" [level=2] [ref=e487]
+        - generic [ref=e490]:
+          - textbox "Email" [ref=e491]
+          - generic: Email
+          - button "Subscribe" [ref=e492] [cursor=pointer]:
+            - img [ref=e494]
+    - generic [ref=e496]:
+      - generic [ref=e499]:
+        - generic [ref=e500]: Payment methods
+        - list [ref=e501]:
+          - listitem [ref=e502]:
+            - img "Visa" [ref=e503]
+          - listitem [ref=e507]:
+            - img "Mastercard" [ref=e508]
+          - listitem [ref=e514]:
+            - img "American Express" [ref=e515]
+          - listitem [ref=e524]:
+            - img "PayPal" [ref=e525]
+          - listitem [ref=e531]:
+            - img "Diners Club" [ref=e532]
+          - listitem [ref=e536]:
+            - img "Discover" [ref=e537]
+      - generic [ref=e547]:
+        - generic [ref=e548]:
+          - text: © 2026,
+          - link "goosnav-y2k" [ref=e549] [cursor=pointer]:
+            - /url: /
+        - link "Powered by Shopify" [ref=e551] [cursor=pointer]:
+          - /url: https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore
+```

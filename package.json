@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ref:capture": "node tools/reference-capture/capture.mjs tools/reference-capture/targets.json"
+    "ref:capture": "node tools/reference-capture/capture.mjs tools/reference-capture/targets.json",
+    "visual:baseline": "npx playwright test --update-snapshots",
+    "visual:test": "npx playwright test"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,1360 @@
+/**
+ * Y2K Component Overrides
+ * Systematically removes modern styling from Dawn component CSS
+ * Without modifying 48 individual component files
+ *
+ * This file loads AFTER base.css to override Dawn's modern styling
+ * with authentic early 2000s aesthetics matching YouTube 2007 / eBay 2004
+ */
+
+/* ==========================================================================
+   KILL BORDER RADIUS EVERYWHERE
+   ========================================================================== */
+
+.card, .card__inner, .card__media, .card__content,
+.modal, .drawer, .popup, .popover,
+.badge, .announcement-bar, .price__badge-sale,
+.facets__summary, .pagination__item,
+.accordion, .accordion__content,
+.slideshow, .slideshow__slide, .banner,
+.newsletter, .newsletter__wrapper,
+.search, .predictive-search,
+.menu, .mega-menu, .list-menu,
+.product, .product__media-item,
+.collection, .collection__grid,
+.image-with-text, .featured-collection,
+.cart-notification, .cart-drawer {
+  border-radius: 0 !important;
+}
+
+/* ==========================================================================
+   KILL ALL SHADOWS
+   ========================================================================== */
+
+.card:after, .card__inner:after, .card__content:after,
+.modal, .drawer, .drawer__inner,
+.facets__summary, .facets__form,
+.predictive-search, .search__results,
+.cart-notification, .cart-drawer,
+.mega-menu__content, .header__submenu,
+.quick-add-modal, .product-popup-modal,
+.media, .product__media-wrapper,
+.shopify-section,
+*::before, *::after {
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* ==========================================================================
+   KILL TRANSITIONS & ANIMATIONS
+   ========================================================================== */
+
+.card .media img,
+.card__media,
+.icon-wrap,
+.drawer, .modal,
+.slideshow__slide,
+.facets__summary,
+.accordion summary,
+.menu__item,
+.cart-notification,
+.product__media-item,
+.slider,
+* {
+  transition: none !important;
+  animation: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* ==========================================================================
+   CONVERT RGBA TO SOLID COLORS
+   ========================================================================== */
+
+.accordion {
+  border-color: #e0e0e0 !important;
+  background-color: #ffffff !important;
+}
+
+.facets__summary {
+  border-color: #999999 !important;
+  background-color: #f0f0f0 !important;
+}
+
+.facets__form,
+.facets__wrapper {
+  background-color: #f0f0f0 !important;
+}
+
+.pagination__item {
+  border: 1px solid #999999 !important;
+  background-color: #ffffff !important;
+}
+
+.pagination__item--current {
+  background-color: #e0e0e0 !important;
+  font-weight: bold !important;
+}
+
+/* ==========================================================================
+   CARD COMPONENTS Y2K TREATMENT
+   ========================================================================== */
+
+.card {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+.card__heading,
+.card__information {
+  background-color: transparent !important;
+}
+
+.card:hover {
+  border-color: #999999 !important;
+}
+
+/* Remove hover effects */
+.card:hover .media img,
+.card:hover .card__media,
+.product-card-wrapper:hover .card {
+  transform: none !important;
+  opacity: 1 !important;
+  scale: 1 !important;
+}
+
+/* ==========================================================================
+   BADGE STYLING
+   ========================================================================== */
+
+.badge {
+  background-color: #ffcc00 !important;
+  color: #333333 !important;
+  border: 1px solid #cc9900 !important;
+  font-size: 10px !important;
+  padding: 2px 5px !important;
+}
+
+.price__badge-sale {
+  background-color: #cc0000 !important;
+  color: #ffffff !important;
+  border: 1px solid #990000 !important;
+}
+
+/* ==========================================================================
+   ANNOUNCEMENT BAR / TOP STRIP
+   ========================================================================== */
+
+.announcement-bar {
+  background: #ffffff !important;
+  color: #003d7a !important;
+  border-bottom: 2px solid #003d7a !important;
+  padding: 5px 10px !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+}
+.announcement-bar *,
+.announcement-bar a {
+  color: #003d7a !important;
+}
+
+/* ==========================================================================
+   HEADER — EBAY 2004 NAV TREATMENT
+   ========================================================================== */
+
+.section-header,
+.header-wrapper {
+  background: #ffffff !important;
+  border-bottom: 2px solid #003d7a !important;
+  box-shadow: none !important;
+  margin-bottom: 6px !important;
+}
+
+.header {
+  padding: 8px 14px !important;
+  align-items: center !important;
+  min-height: 48px !important;
+  background: #ffffff !important;
+  display: grid !important;
+  grid-template-columns: auto auto 1fr auto !important;
+  column-gap: 12px !important;
+}
+
+.header__heading-link {
+  color: #003d7a !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  font-size: 12px !important;
+  line-height: 1 !important;
+}
+
+.header__heading {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.header__heading-logo-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  height: 28px !important;
+}
+
+.header__inline-menu {
+  display: flex !important;
+  align-items: center !important;
+  height: 32px !important;
+  background: #003d7a !important;
+  border: 2px solid #002a57 !important;
+  box-shadow: inset 0 -2px 0 #002a57 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  align-self: center !important;
+}
+
+.header__inline-menu .list-menu {
+  gap: 0 !important;
+  height: 32px !important;
+  align-items: stretch !important;
+  display: flex !important;
+}
+
+.header__inline-menu .list-menu li {
+  display: flex !important;
+  height: 32px !important;
+}
+
+.header__inline-menu .list-menu--inline {
+  display: flex !important;
+  align-items: center !important;
+  height: 32px !important;
+}
+
+.list-menu--inline .list-menu__item {
+  display: flex !important;
+  align-items: center !important;
+  height: 32px !important;
+}
+
+.header__menu-item {
+  margin: 0 !important;
+  padding: 0 12px !important;
+  border-right: 1px solid #002a57 !important;
+  background: linear-gradient(#0755ab, #003d7a) !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  letter-spacing: 0 !important;
+  text-transform: uppercase !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+}
+
+.header__menu-item:last-child {
+  border-right: none !important;
+}
+
+.header__menu-item .header__active-menu-item,
+.header__menu-item[aria-current="page"],
+.header__menu-item[aria-current="true"],
+.header__menu-item .list-menu__item--active,
+.header__menu-item .mega-menu__link--active {
+  background: #ffffff !important;
+  color: #003d7a !important;
+  border-bottom: 2px solid #003d7a !important;
+}
+
+.header__menu-item:hover {
+  background: #0052a3 !important;
+  color: #ffffff !important;
+}
+
+.header__menu-item svg {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+.header__icons {
+  gap: 10px !important;
+  align-items: center !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-self: center !important;
+  justify-self: end !important;
+  flex-shrink: 0 !important;
+  column-gap: 12px !important;
+}
+
+.header__icon {
+  width: 24px !important;
+  height: 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.header__icons .svg-wrapper {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.header__search {
+  min-width: 220px !important;
+  max-width: 320px !important;
+  width: 100% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  height: 28px !important;
+  padding: 0 !important;
+  align-self: center !important;
+}
+
+.header__search .search {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  width: 100% !important;
+  height: 28px !important;
+  flex: 1 1 auto !important;
+}
+
+.header__search .field__input {
+  height: 28px !important;
+  padding: 4px 8px !important;
+  border: 2px solid #808080 !important;
+  line-height: 1.2 !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+.header__search .search__button {
+  height: 28px !important;
+  padding: 0 12px !important;
+  border: 2px solid #ffffff #808080 #808080 #ffffff !important;
+  background: linear-gradient(#f0f0f0, #d0d0d0) !important;
+  color: #003d7a !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.header-localization,
+.desktop-localization-wrapper,
+.localization-form {
+  height: 28px !important;
+  align-items: center !important;
+  gap: 6px !important;
+  align-self: center !important;
+  flex-shrink: 0 !important;
+}
+
+.localization-form {
+  display: inline-flex !important;
+  padding: 0 6px !important;
+  border: 2px solid #808080 !important;
+  background: #ffffff !important;
+  height: 28px !important;
+}
+
+.localization-form select,
+.localization-form__select {
+  height: 24px !important;
+  padding: 2px 6px !important;
+  font-size: 11px !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   PRODUCT PAGE — SQUARE MEDIA & TABLED LAYOUT
+   ========================================================================== */
+
+.collection-list,
+.featured-collection {
+  border: 1px solid #cccccc !important;
+  background: #f9f9f9 !important;
+  padding: 8px !important;
+  margin-bottom: 12px !important;
+}
+
+.collection-list__item,
+.featured-collection .collection-list__item {
+  border: 1px solid #cccccc !important;
+  background: #ffffff !important;
+  padding: 8px !important;
+}
+
+.collection-list__item + .collection-list__item {
+  margin-top: 8px !important;
+}
+
+.collection-list__item .card,
+.featured-collection .card {
+  border: 1px solid #cccccc !important;
+  background: #ffffff !important;
+}
+
+.collection-list__item .card__inner,
+.collection-list__item .media,
+.collection-list__item img {
+  object-fit: contain !important;
+  background: #ffffff !important;
+}
+
+.page-width--product {
+  max-width: 980px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.product.grid--2-col-tablet {
+  grid-template-columns: 440px 1fr !important;
+  column-gap: 18px !important;
+  align-items: start !important;
+}
+
+.product__media-wrapper {
+  max-width: 440px !important;
+  width: 100% !important;
+  border: 1px solid #cccccc !important;
+  background: #ffffff !important;
+  padding: 8px !important;
+  margin: 0 auto !important;
+}
+
+.product__media-wrapper .product__media-item,
+.product__media-wrapper .media {
+  aspect-ratio: 1 / 1 !important;
+  width: 100% !important;
+  background: #f9f9f9 !important;
+  border: 1px solid #e0e0e0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+.product__media-wrapper img,
+.product__media-wrapper video,
+.product__media-wrapper model-viewer {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+}
+
+.product__info-wrapper {
+  max-width: 440px !important;
+}
+
+/* ==========================================================================
+   REMOVE ALL HOVER TRANSFORM EFFECTS
+   ========================================================================== */
+
+*:hover {
+  transform: none !important;
+}
+
+/* ==========================================================================
+   CART NOTIFICATION Y2K
+   ========================================================================== */
+
+.cart-notification {
+  border: 2px solid #999999 !important;
+  background-color: #f0f0f0 !important;
+}
+
+.cart-notification__header {
+  background-color: #e0e0e0 !important;
+  border-bottom: 1px solid #999999 !important;
+  padding: 5px 10px !important;
+}
+
+.cart-notification__links {
+  border-top: 1px solid #999999 !important;
+  background-color: #f9f9f9 !important;
+  padding: 8px 10px !important;
+}
+
+/* ==========================================================================
+   CART DRAWER Y2K
+   ========================================================================== */
+
+.drawer {
+  border: 2px solid #808080 !important;
+  background-color: #ffffff !important;
+}
+
+.drawer__header {
+  background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%) !important;
+  border-bottom: 1px solid #cccccc !important;
+  padding: 6px 10px !important;
+}
+
+.drawer__inner,
+.cart-drawer {
+  background-color: #ffffff !important;
+}
+
+.cart-item {
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 8px 10px !important;
+}
+
+.cart-item:nth-child(even) {
+  background-color: #f9f9f9 !important;
+}
+
+/* ==========================================================================
+   MEGA MENU Y2K
+   ========================================================================== */
+
+.mega-menu {
+  border: 2px solid #999999 !important;
+  background-color: #ffffff !important;
+}
+
+.mega-menu__content {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+  padding: 10px !important;
+}
+
+.mega-menu__link {
+  padding: 3px 8px !important;
+  font-size: 11px !important;
+}
+
+/* ==========================================================================
+   MENU DRAWER Y2K
+   ========================================================================== */
+
+.menu-drawer {
+  border-left: 2px solid #808080 !important;
+  background-color: #ffffff !important;
+}
+
+.menu-drawer__inner-container {
+  background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%) !important;
+  border-bottom: 1px solid #cccccc !important;
+}
+
+.menu-drawer__menu-item {
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 6px 10px !important;
+}
+
+/* ==========================================================================
+   PREDICTIVE SEARCH Y2K
+   ========================================================================== */
+
+.predictive-search {
+  border: 2px solid #999999 !important;
+  background-color: #ffffff !important;
+}
+
+.predictive-search__item {
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 5px 8px !important;
+}
+
+.predictive-search__item:hover {
+  background-color: #ffffcc !important; /* eBay-style yellow hover */
+}
+
+.predictive-search__item-heading {
+  font-size: 11px !important;
+  font-weight: normal !important;
+}
+
+/* ==========================================================================
+   VARIANT PICKER Y2K
+   ========================================================================== */
+
+.variant-input-wrapper {
+  border: 1px solid #cccccc !important;
+  padding: 8px !important;
+  background-color: #f9f9f9 !important;
+}
+
+.variant-input {
+  border: 2px solid #999999 !important;
+  padding: 3px 8px !important;
+  background-color: #ffffff !important;
+  font-size: 11px !important;
+}
+
+.variant-input--button {
+  border: 1px solid #999999 !important;
+  background-color: #e0e0e0 !important;
+  min-width: 40px !important;
+  height: 24px !important;
+}
+
+.variant-input--button.active {
+  background-color: #cccccc !important;
+  border-color: #666666 !important;
+  font-weight: bold !important;
+}
+
+/* ==========================================================================
+   QUICK ADD MODAL Y2K
+   ========================================================================== */
+
+.quick-add-modal {
+  border: 3px solid #808080 !important;
+  background-color: #f0f0f0 !important;
+}
+
+.quick-add-modal__content-info {
+  border-left: 1px solid #cccccc !important;
+  padding: 10px !important;
+}
+
+/* ==========================================================================
+   VOLUME PRICING Y2K
+   ========================================================================== */
+
+.volume-pricing-table {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+.volume-pricing-table th {
+  background-color: #e0e0e0 !important;
+  border-bottom: 2px solid #999999 !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+}
+
+.volume-pricing-table td {
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 3px 8px !important;
+  font-size: 11px !important;
+}
+
+.volume-pricing-table tr:nth-child(even) {
+  background-color: #f9f9f9 !important;
+}
+
+/* ==========================================================================
+   SLIDESHOW Y2K
+   ========================================================================== */
+
+.slideshow {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+.slideshow__controls {
+  background-color: #e0e0e0 !important;
+  border-top: 1px solid #999999 !important;
+  padding: 5px !important;
+}
+
+.slideshow__button {
+  border: 1px solid #999999 !important;
+  background-color: #ffffff !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.slideshow__button:hover {
+  background-color: #f0f0f0 !important;
+}
+
+/* ==========================================================================
+   SLIDER Y2K
+   ========================================================================== */
+
+.slider {
+  scroll-behavior: auto !important; /* Kill smooth scroll */
+}
+
+.slider__slide {
+  border: 1px solid #e0e0e0 !important;
+}
+
+/* ==========================================================================
+   VIDEO MODAL Y2K
+   ========================================================================== */
+
+.modal-video {
+  border: 3px solid #808080 !important;
+  background-color: #000000 !important;
+}
+
+.deferred-media__poster {
+  border: 1px solid #cccccc !important;
+  background-color: #000000 !important;
+}
+
+.deferred-media__poster-button {
+  border: 2px solid #ffffff !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  width: 60px !important;
+  height: 60px !important;
+}
+
+/* ==========================================================================
+   ACCORDION Y2K
+   ========================================================================== */
+
+.accordion {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+.accordion summary {
+  background-color: #e0e0e0 !important;
+  border-bottom: 1px solid #999999 !important;
+  padding: 5px 10px !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+  cursor: pointer !important;
+}
+
+.accordion__content {
+  padding: 10px !important;
+  font-size: 11px !important;
+  background-color: #f9f9f9 !important;
+}
+
+.accordion summary::marker,
+.accordion summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.accordion summary::before {
+  content: "+ " !important;
+  font-weight: bold !important;
+  margin-right: 5px !important;
+}
+
+.accordion[open] summary::before {
+  content: "- " !important;
+}
+
+/* ==========================================================================
+   NEWSLETTER Y2K
+   ========================================================================== */
+
+.newsletter-form {
+  border: 2px solid #999999 !important;
+  background-color: #f0f0f0 !important;
+  padding: 10px !important;
+}
+
+.newsletter__heading {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  margin-bottom: 8px !important;
+}
+
+.newsletter__wrapper {
+  background-color: #ffffff !important;
+  border: 1px solid #cccccc !important;
+}
+
+/* ==========================================================================
+   RATING STARS Y2K
+   ========================================================================== */
+
+.rating-stars {
+  font-size: 12px !important;
+}
+
+.rating-star {
+  color: #ffcc00 !important;
+  text-shadow: 0 0 1px #cc9900 !important;
+}
+
+.rating-star--empty {
+  color: #cccccc !important;
+}
+
+.rating-count {
+  font-size: 10px !important;
+  color: #0000ee !important;
+  text-decoration: underline !important;
+}
+
+/* ==========================================================================
+   LOCALIZATION FORM Y2K
+   ========================================================================== */
+
+.localization-form {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+  padding: 5px !important;
+}
+
+.localization-form__select {
+  border: 1px solid #999999 !important;
+  background-color: #ffffff !important;
+  padding: 2px 5px !important;
+  font-size: 10px !important;
+}
+
+.localization-form__select:hover {
+  border-color: #666666 !important;
+  background-color: #f5f5f5 !important;
+}
+
+.localization-form__select:focus,
+.localization-form__select:focus-visible {
+  outline: 1px dotted #000000 !important;
+  outline-offset: 2px !important;
+  border-color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+.localization-form__select:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  background-color: #f0f0f0 !important;
+}
+
+/* Fix localization wrapper layout conflicts */
+.desktop-localization-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  flex-wrap: nowrap !important;
+}
+
+.header-localization {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.header__icons .desktop-localization-wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ==========================================================================
+   IMAGE BANNER Y2K
+   ========================================================================== */
+
+.banner {
+  border: 2px solid #999999 !important;
+  background-color: #ffffff !important;
+  padding: 12px !important;
+}
+
+.banner__box {
+  border: 2px solid #999999 !important;
+  background-color: #ffffff !important;
+  padding: 12px !important;
+  box-shadow: inset 0 0 0 1px #ffffff !important;
+}
+
+.banner__content {
+  background: #ffffff !important;
+  border: 1px solid #cccccc !important;
+  padding: 12px !important;
+  color: #000000 !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  min-height: 120px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+}
+
+.banner__heading,
+.banner__text {
+  color: #000000 !important;
+  text-shadow: none !important;
+  margin: 0 0 8px 0 !important;
+  padding: 0 !important;
+}
+
+.banner__content::before,
+.banner__media::after {
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+.banner__heading {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: #000000 !important;
+  margin-bottom: 8px !important;
+  text-align: left !important;
+}
+
+.banner__text {
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+  margin-bottom: 8px !important;
+  color: #222222 !important;
+  text-align: left !important;
+}
+
+/* eBay-style yellow banner variant */
+.banner--yellow {
+  background-color: #ffffcc !important;
+  border: 2px solid #cccc00 !important;
+}
+
+.banner--yellow .banner__box {
+  background-color: #ffff99 !important;
+  border-color: #cccc00 !important;
+}
+
+/* Remove gradient overlays */
+.banner__media::after,
+.banner__content::before {
+  display: none !important;
+  background: none !important;
+}
+
+/* ==========================================================================
+   MULTICOLUMN Y2K
+   ========================================================================== */
+
+.multicolumn {
+  border: 1px solid #e0e0e0 !important;
+  background-color: #ffffff !important;
+  padding: 10px !important;
+}
+
+.multicolumn-card {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+  padding: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.multicolumn-card__image-wrapper {
+  border-bottom: 1px solid #cccccc !important;
+  margin-bottom: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.multicolumn-card__info {
+  font-size: 11px !important;
+}
+
+/* ==========================================================================
+   RICH TEXT Y2K
+   ========================================================================== */
+
+.rich-text {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+  padding: 15px !important;
+}
+
+.rich-text__blocks {
+  background-color: #f9f9f9 !important;
+  border: 1px solid #e0e0e0 !important;
+  padding: 10px !important;
+}
+
+.rich-text__heading {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  border-bottom: 2px solid #cccccc !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+/* ==========================================================================
+   COLLAGE Y2K
+   ========================================================================== */
+
+.collage {
+  border: 1px solid #cccccc !important;
+}
+
+.collage-card {
+  border: 1px solid #e0e0e0 !important;
+  background-color: #ffffff !important;
+}
+
+/* ==========================================================================
+   BLOG GRID Y2K
+   ========================================================================== */
+
+.blog-articles {
+  border: 1px solid #e0e0e0 !important;
+  background-color: #ffffff !important;
+}
+
+.article-card {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+  padding: 8px !important;
+}
+
+.article-card__image-wrapper {
+  border: 1px solid #cccccc !important;
+  margin-bottom: 8px !important;
+}
+
+.article-card__title {
+  font-size: 12px !important;
+  font-weight: bold !important;
+  margin-bottom: 5px !important;
+}
+
+.article-card__info {
+  font-size: 10px !important;
+  color: #666666 !important;
+  border-top: 1px solid #e0e0e0 !important;
+  padding-top: 5px !important;
+  margin-top: 8px !important;
+}
+
+/* ==========================================================================
+   BLOG POST Y2K
+   ========================================================================== */
+
+.article-template {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+  padding: 15px !important;
+}
+
+.article-template__title {
+  font-size: 16px !important;
+  font-weight: bold !important;
+  border-bottom: 2px solid #cccccc !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+.article-template__content {
+  font-size: 11px !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================================================
+   COMMENTS Y2K
+   ========================================================================== */
+
+.article-template__comment-wrapper {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+  padding: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.comment {
+  border-bottom: 1px solid #e0e0e0 !important;
+  padding: 8px 0 !important;
+}
+
+.comment__author {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  color: #333333 !important;
+}
+
+.comment__content {
+  font-size: 11px !important;
+  padding-left: 10px !important;
+}
+
+/* ==========================================================================
+   FOOTER Y2K
+   ========================================================================== */
+
+.footer {
+  background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%) !important;
+  border-top: 2px solid #cccccc !important;
+  padding: 10px 0 !important;
+}
+
+.footer__content-top {
+  border-bottom: 1px solid #cccccc !important;
+  padding-bottom: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.footer-block {
+  border-right: 1px solid #e0e0e0 !important;
+  padding: 0 15px !important;
+}
+
+.footer-block__heading {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  color: #333333 !important;
+  margin-bottom: 8px !important;
+  text-decoration: none !important;
+}
+
+.footer-block__details-content {
+  font-size: 10px !important;
+}
+
+.footer__content-bottom {
+  background-color: #e0e0e0 !important;
+  border-top: 1px solid #999999 !important;
+  padding: 8px 0 !important;
+  text-align: center !important;
+}
+
+.footer__copyright {
+  font-size: 9px !important;
+  color: #666666 !important;
+}
+
+/* ==========================================================================
+   CONTACT FORM Y2K
+   ========================================================================== */
+
+.contact-form {
+  border: 2px solid #999999 !important;
+  background-color: #f0f0f0 !important;
+  padding: 15px !important;
+}
+
+.contact__title {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  border-bottom: 2px solid #cccccc !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 10px !important;
+}
+
+.contact__fields {
+  background-color: #ffffff !important;
+  border: 1px solid #cccccc !important;
+  padding: 10px !important;
+}
+
+/* ==========================================================================
+   COLLAPSIBLE CONTENT Y2K
+   ========================================================================== */
+
+.collapsible-content {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+.collapsible-content-wrapper-closed {
+  background-color: #e0e0e0 !important;
+  border-bottom: 1px solid #999999 !important;
+  padding: 5px 10px !important;
+}
+
+/* ==========================================================================
+   LOADING SPINNER Y2K
+   ========================================================================== */
+
+.loading__spinner,
+.spinner {
+  border: 2px solid #cccccc !important;
+  border-top-color: #333333 !important;
+  border-radius: 0 !important; /* Square spinner */
+  width: 20px !important;
+  height: 20px !important;
+  animation: none !important; /* Kill smooth rotation */
+}
+
+/* Simple rotating square animation */
+@keyframes y2k-spin {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(90deg); }
+  50% { transform: rotate(180deg); }
+  75% { transform: rotate(270deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading__spinner {
+  animation: y2k-spin 1s steps(4) infinite !important;
+}
+
+/* ==========================================================================
+   ERROR MESSAGES Y2K
+   ========================================================================== */
+
+.errors,
+.form__message--error {
+  border: 2px solid #cc0000 !important;
+  background-color: #ffcccc !important;
+  color: #cc0000 !important;
+  padding: 8px 10px !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+}
+
+/* ==========================================================================
+   SUCCESS MESSAGES Y2K
+   ========================================================================== */
+
+.form__message--success {
+  border: 2px solid #009900 !important;
+  background-color: #ccffcc !important;
+  color: #006600 !important;
+  padding: 8px 10px !important;
+  font-size: 11px !important;
+  font-weight: bold !important;
+}
+
+/* ==========================================================================
+   FORM VALIDATION Y2K
+   ========================================================================== */
+
+input:invalid,
+textarea:invalid {
+  border-color: #cc0000 #ffcccc #ffcccc #cc0000 !important;
+  background-color: #fff5f5 !important;
+}
+
+input:valid {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+}
+
+/* ==========================================================================
+   ALERT BOXES Y2K
+   ========================================================================== */
+
+.alert,
+.announcement-bar {
+  border: 1px solid #003d7a !important;
+  background-color: #ffffff !important;
+  color: #003d7a !important;
+  padding: 5px 10px !important;
+  font-size: 11px !important;
+}
+
+.alert--info {
+  background-color: #cce5ff !important;
+  border-color: #0066cc !important;
+}
+
+.alert--warning {
+  background-color: #fff5cc !important;
+  border-color: #cc9900 !important;
+}
+
+/* ==========================================================================
+   MOBILE Y2K ADJUSTMENTS
+   ========================================================================== */
+
+@media screen and (max-width: 749px) {
+  .page-width--product {
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  /* Mobile Drawer Menu Y2K */
+  .menu-drawer {
+    border-left: 3px solid #808080 !important;
+    background-color: #f0f0f0 !important;
+    transition: none !important; /* Instant show - no slide */
+  }
+
+  .menu-drawer__inner-container {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%) !important;
+    border-bottom: 2px solid #999999 !important;
+    padding: 6px 10px !important;
+  }
+
+  .menu-drawer__menu {
+    background-color: #ffffff !important;
+  }
+
+  .menu-drawer__menu-item {
+    border-bottom: 1px solid #e0e0e0 !important;
+    padding: 6px 10px !important;
+    font-size: 11px !important;
+  }
+
+  /* Mobile Facets/Filters Y2K */
+  .mobile-facets__wrapper {
+    border: 2px solid #999999 !important;
+    background-color: #ffffff !important;
+  }
+
+  .mobile-facets__header {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%) !important;
+    border-bottom: 2px solid #999999 !important;
+    padding: 6px 10px !important;
+  }
+
+  .mobile-facets__list {
+    background-color: #f9f9f9 !important;
+  }
+
+  .mobile-facets__item {
+    border-bottom: 1px solid #e0e0e0 !important;
+    padding: 5px 10px !important;
+  }
+
+  /* Accordion filters - instant expand */
+  .mobile-facets__details {
+    transition: none !important;
+  }
+
+  /* Mobile Search Y2K */
+  .search-modal {
+    border: 2px solid #999999 !important;
+    background-color: #ffffff !important;
+  }
+
+  .search-modal__form {
+    background-color: #f0f0f0 !important;
+    border-bottom: 1px solid #cccccc !important;
+    padding: 8px !important;
+  }
+
+  .search-modal__content {
+    background-color: #ffffff !important;
+  }
+
+  /* Mobile Cart Y2K */
+  .cart-drawer {
+    border-left: 3px solid #808080 !important;
+    background-color: #ffffff !important;
+  }
+
+  .cart-drawer__header {
+    background: linear-gradient(to bottom, #f8f8f8 0%, #e8e8e8 100%) !important;
+    border-bottom: 2px solid #999999 !important;
+    padding: 6px 10px !important;
+  }
+
+  .cart-drawer__footer {
+    background-color: #f0f0f0 !important;
+    border-top: 2px solid #999999 !important;
+    padding: 10px !important;
+  }
+
+  /* Product media mobile */
+  .product.grid--2-col-tablet {
+    grid-template-columns: 1fr !important;
+  }
+
+  .product__media-wrapper {
+    max-width: 100% !important;
+    margin: 0 auto 12px !important;
+  }
+
+  .product__info-wrapper {
+    max-width: 100% !important;
+  }
+
+  .page-width--product {
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .page-width .product {
+    padding: 10px !important;
+  }
+}
