@@ -205,10 +205,10 @@
 .header__inline-menu {
   display: flex !important;
   align-items: center !important;
-  height: 32px !important;
-  background: #003d7a !important;
-  border: 2px solid #002a57 !important;
-  box-shadow: inset 0 -2px 0 #002a57 !important;
+  height: auto !important;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
   padding: 0 !important;
   margin: 0 !important;
   flex-shrink: 0 !important;
@@ -216,44 +216,46 @@
 }
 
 .header__inline-menu .list-menu {
-  gap: 0 !important;
-  height: 32px !important;
-  align-items: stretch !important;
+  gap: 4px !important;
+  height: auto !important;
+  align-items: center !important;
   display: flex !important;
 }
 
 .header__inline-menu .list-menu li {
   display: flex !important;
-  height: 32px !important;
+  height: auto !important;
 }
 
 .header__inline-menu .list-menu--inline {
   display: flex !important;
   align-items: center !important;
-  height: 32px !important;
+  height: auto !important;
+  gap: 4px !important;
 }
 
 .list-menu--inline .list-menu__item {
   display: flex !important;
   align-items: center !important;
-  height: 32px !important;
+  height: auto !important;
 }
 
 .header__menu-item {
   margin: 0 !important;
-  padding: 0 12px !important;
-  border-right: 1px solid #002a57 !important;
-  background: linear-gradient(#0755ab, #003d7a) !important;
-  color: #ffffff !important;
+  padding: 2px 8px !important;
+  border: none !important;
+  background: none !important;
+  color: #0000ee !important;
   font-size: 11px !important;
-  font-weight: bold !important;
+  font-weight: normal !important;
   letter-spacing: 0 !important;
-  text-transform: uppercase !important;
-  height: 32px !important;
+  text-transform: none !important;
+  text-decoration: underline !important;
+  height: auto !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  line-height: 1 !important;
+  line-height: 1.4 !important;
 }
 
 .header__menu-item:last-child {
@@ -265,14 +267,15 @@
 .header__menu-item[aria-current="true"],
 .header__menu-item .list-menu__item--active,
 .header__menu-item .mega-menu__link--active {
-  background: #ffffff !important;
-  color: #003d7a !important;
-  border-bottom: 2px solid #003d7a !important;
+  background: none !important;
+  color: #0000ee !important;
+  border: none !important;
+  font-weight: bold !important;
 }
 
 .header__menu-item:hover {
-  background: #0052a3 !important;
-  color: #ffffff !important;
+  background: none !important;
+  color: #cc3333 !important;
 }
 
 .header__menu-item svg {
@@ -1357,4 +1360,1331 @@ input:valid {
   .page-width .product {
     padding: 10px !important;
   }
+}
+
+/* ==========================================================================
+   ITERATION 1 FIXES - Zebra striping, newsletter input, collection borders
+   ========================================================================== */
+
+/* FIX: Enhanced zebra striping for product grids - override card backgrounds */
+.collection .product-grid .grid__item:nth-child(odd),
+.collection .product-grid .grid__item:nth-child(odd) .card-wrapper,
+.collection .product-grid .grid__item:nth-child(odd) .card,
+#ProductGridContainer .grid__item:nth-child(odd),
+#ProductGridContainer .grid__item:nth-child(odd) .card-wrapper,
+#ProductGridContainer .grid__item:nth-child(odd) .card {
+  background-color: #ffffff !important;
+}
+
+.collection .product-grid .grid__item:nth-child(even),
+.collection .product-grid .grid__item:nth-child(even) .card-wrapper,
+.collection .product-grid .grid__item:nth-child(even) .card,
+#ProductGridContainer .grid__item:nth-child(even),
+#ProductGridContainer .grid__item:nth-child(even) .card-wrapper,
+#ProductGridContainer .grid__item:nth-child(even) .card {
+  background-color: #f0f0f0 !important;
+}
+
+/* FIX: Collection page needs left border to frame content */
+.collection,
+#ProductGridContainer,
+.product-grid-container {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+/* FIX: Newsletter email input - remove pink/red tint */
+.footer .newsletter-form__field-wrapper .field__input,
+.newsletter-form .field__input,
+.footer .field__input,
+input[type="email"].field__input {
+  background-color: #ffffff !important;
+  border: 2px solid #808080 #ffffff #ffffff #808080 !important;
+  color: #000000 !important;
+}
+
+/* FIX: Featured products heading needs separator */
+.featured-collection .title,
+.collection-list .title,
+section[id*="featured"] .title {
+  border-bottom: 2px solid #003d7a !important;
+  padding-bottom: 5px !important;
+  margin-bottom: 10px !important;
+}
+
+/* FIX: Product page denomination buttons - proper inactive state */
+.product-form__input input[type="radio"] + label,
+.variant-input-wrapper input[type="radio"] + label,
+fieldset .product-form__input label {
+  border: 2px solid #808080 #ffffff #ffffff #808080 !important;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #c0c0c0 100%) !important;
+  padding: 4px 12px !important;
+}
+
+.product-form__input input[type="radio"]:checked + label,
+.variant-input-wrapper input[type="radio"]:checked + label {
+  border: 2px solid #000000 !important;
+  background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%) !important;
+  font-weight: bold !important;
+}
+
+/* FIX: Sold out button - more prominent disabled styling */
+.product-form__submit[disabled],
+.shopify-payment-button button[disabled],
+button.button[disabled] {
+  background: #c0c0c0 !important;
+  color: #808080 !important;
+  border: 2px solid #808080 #ffffff #ffffff #808080 !important;
+  cursor: not-allowed !important;
+}
+
+/* FIX: Section headings should have eBay-style underlines */
+.section-header .title,
+.collection__title .title,
+h2.title {
+  border-bottom: 1px solid #cccccc !important;
+  padding-bottom: 4px !important;
+}
+
+/* FIX: Cart empty page - tighter spacing */
+.cart--empty {
+  padding: 15px !important;
+}
+
+.cart--empty h1 {
+  font-size: 14px !important;
+  margin-bottom: 10px !important;
+}
+
+/* FIX: Blue separator under header needs to be more prominent */
+.section-header {
+  border-bottom: 3px solid #003d7a !important;
+}
+
+/* FIX: Search results input - less wide, more oldweb */
+.template-search .search__input,
+.search-modal .search__input {
+  max-width: 400px !important;
+}
+
+/* ==========================================================================
+   ITERATION 2 FIXES - Accordion icons, product count, arrow icons, density
+   ========================================================================== */
+
+/* FIX: Product count text should be smaller */
+.product-count,
+.product-count__text,
+.facets-container .product-count {
+  font-size: 10px !important;
+  color: #666666 !important;
+}
+
+/* FIX: Accordion should use +/- text, hide chevron icons */
+.accordion .icon-accordion,
+.accordion .icon-caret,
+.accordion svg.icon-caret,
+.product__accordion .icon,
+details[id*="Details"] summary .icon,
+.collapsible-content summary .icon-caret {
+  display: none !important;
+}
+
+/* FIX: Multicolumn sections - tighter/denser spacing */
+.multicolumn .slider,
+.multicolumn-list {
+  gap: 8px !important;
+}
+
+.multicolumn-card,
+.multicolumn .multicolumn-card__info {
+  padding: 8px !important;
+}
+
+.multicolumn-card__image-wrapper {
+  margin-bottom: 5px !important;
+}
+
+/* FIX: Image with text section - denser */
+.image-with-text {
+  padding: 10px !important;
+}
+
+.image-with-text__content {
+  padding: 10px !important;
+  gap: 8px !important;
+}
+
+/* FIX: Arrow icons in links should be simpler/hidden */
+.button .icon-arrow,
+.link .icon-arrow,
+a .icon-arrow,
+.icon-arrow {
+  display: none !important;
+}
+
+/* Add text-based indicators instead */
+.collection__view-all a::after,
+.button--text-link::after {
+  content: " »" !important;
+  font-family: Arial, sans-serif !important;
+}
+
+/* FIX: Newsletter button - style it but keep arrow (CSS can't replace HTML content easily) */
+.newsletter-form__button {
+  min-width: 44px !important;
+  padding: 4px 10px !important;
+  background: linear-gradient(to bottom, #f5f5f5 0%, #ddd 100%) !important;
+  border: 2px solid #ffffff #808080 #808080 #ffffff !important;
+}
+
+.newsletter-form__button:hover {
+  background: linear-gradient(to bottom, #ffffff 0%, #e8e8e8 100%) !important;
+}
+
+.newsletter-form__button:active {
+  border-color: #808080 #ffffff #ffffff #808080 !important;
+  background: linear-gradient(to bottom, #ddd 0%, #f5f5f5 100%) !important;
+}
+
+.newsletter-form__button .icon,
+.newsletter-form__button svg {
+  width: 14px !important;
+  height: 14px !important;
+  color: #333333 !important;
+  stroke: #333333 !important;
+}
+
+/* FIX: View all button styling */
+.button--secondary,
+.collection__view-all .button {
+  background: linear-gradient(to bottom, #f5f5f5 0%, #ddd 100%) !important;
+  border: 2px solid #808080 #ffffff #ffffff #808080 !important;
+  color: #333333 !important;
+  font-size: 11px !important;
+  padding: 4px 12px !important;
+}
+
+/* FIX: Filter bar - more oldweb form styling */
+.facets__summary,
+.facets__disclosure {
+  font-size: 11px !important;
+}
+
+.facets__summary span {
+  text-decoration: none !important;
+  border-bottom: 1px dotted #666666 !important;
+}
+
+/* FIX: Payment icons - grayscale/muted for oldweb feel */
+.payment-icons .icon,
+.list-payment .icon,
+.footer .payment-icons img {
+  filter: grayscale(30%) !important;
+  opacity: 0.85 !important;
+  max-height: 20px !important;
+}
+
+/* FIX: Selected variant button should look PRESSED with inset border */
+.product-form__input input[type="radio"]:checked + label,
+.variant-input-wrapper input[type="radio"]:checked + label,
+.swatch-input input:checked + label {
+  /* PRESSED appearance - inset border makes it look pushed in */
+  border: 2px inset #808080 !important;
+  background: linear-gradient(to bottom, #c0c0c0 0%, #e8e8e8 100%) !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  box-shadow: inset 2px 2px 3px rgba(0,0,0,0.2) !important;
+}
+
+/* Unselected variant buttons - outset (raised) appearance */
+.product-form__input input[type="radio"]:not(:checked) + label,
+.variant-input-wrapper input[type="radio"]:not(:checked) + label {
+  border: 2px outset #808080 !important;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #c0c0c0 100%) !important;
+}
+
+/* ==========================================================================
+   AI EVAL ITERATION 3 FIXES - ULTRA AGGRESSIVE border-radius removal
+   ========================================================================== */
+
+/* NUCLEAR: Kill ALL border-radius everywhere - multiple specificity levels */
+*,
+*::before,
+*::after,
+html *,
+body *,
+#MainContent *,
+main *,
+.shopify-section *,
+header *,
+footer * {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+
+/* Explicitly target all form elements */
+button,
+input,
+select,
+textarea,
+.button,
+.btn,
+[type="button"],
+[type="submit"],
+[type="reset"],
+[type="text"],
+[type="email"],
+[type="search"],
+[type="password"],
+[type="number"],
+[type="tel"] {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Quantity buttons specifically */
+.quantity__button,
+.quantity button,
+.quantity__input,
+button.quantity__button {
+  border-radius: 0 !important;
+}
+
+/* Product form variant buttons */
+.product-form__input label,
+.product-form__input input + label,
+fieldset label,
+.swatch label,
+.variant-input label {
+  border-radius: 0 !important;
+}
+
+/* Newsletter/subscribe buttons */
+.newsletter__button,
+.newsletter-form__button,
+[class*="newsletter"] button,
+[class*="subscribe"] button {
+  border-radius: 0 !important;
+}
+
+/* Search buttons */
+.search__button,
+.header__search button,
+.predictive-search button,
+[class*="search"] button {
+  border-radius: 0 !important;
+  background-image: none !important;
+  background: #e0e0e0 !important;
+  border: 1px solid #808080 !important;
+}
+
+/* Shop all / view all buttons */
+.button--primary,
+.button--secondary,
+.collection__view-all .button,
+a.button {
+  border-radius: 0 !important;
+}
+
+/* Main content containers - MUST be gray not white */
+main,
+.main-content,
+#MainContent,
+body,
+html {
+  background-color: #f0f0f0 !important;
+}
+
+/* Page wrapper and all major containers */
+.page-container,
+.page-width,
+.main-page-wrapper {
+  background-color: #f0f0f0 !important;
+}
+
+/* Content sections have off-white background for contrast */
+.shopify-section,
+.page-width {
+  background-color: #f9f9f9 !important;
+}
+
+/* Add borders to ALL major content sections */
+.shopify-section {
+  border: 1px solid #cccccc !important;
+  margin-bottom: 8px !important;
+  background-color: #ffffff !important;
+}
+
+/* Header should stand out with border */
+.section-header,
+.header-wrapper {
+  border: 1px solid #cccccc !important;
+  border-bottom: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+/* All major content blocks need visible borders */
+.image-banner,
+.banner,
+.slideshow,
+.rich-text,
+.multicolumn,
+.featured-collection,
+.collection-list,
+.image-with-text,
+.collage,
+.video-section,
+.newsletter {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+  padding: 10px !important;
+  margin: 0 0 8px 0 !important;
+}
+
+/* Footer sections need borders */
+.footer,
+.footer__content-top,
+.footer-block {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+}
+
+/* ==========================================================================
+   HEADER NAVIGATION - PLAIN BLUE UNDERLINED LINKS (NOT BUTTONS)
+   ========================================================================== */
+
+/* Remove ALL button styling from header nav */
+.header__inline-menu,
+.header__inline-menu .list-menu,
+.header__inline-menu .list-menu--inline {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Navigation links = plain blue underlined text */
+.header__menu-item,
+.header__inline-menu .header__menu-item,
+.header__inline-menu .list-menu--inline > li .header__menu-item,
+.list-menu__item .header__menu-item {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 2px 8px !important;
+  color: #0000ee !important;
+  text-decoration: underline !important;
+  font-weight: normal !important;
+  text-transform: none !important;
+  font-size: 11px !important;
+}
+
+.header__menu-item:hover,
+.header__inline-menu .header__menu-item:hover {
+  background: none !important;
+  color: #cc3333 !important;
+  text-decoration: underline !important;
+}
+
+.header__menu-item span {
+  color: inherit !important;
+  text-decoration: inherit !important;
+}
+
+/* Ensure ALL links are blue and underlined */
+a,
+a:link,
+.link,
+[href] {
+  color: #0000ee !important;
+  text-decoration: underline !important;
+}
+
+a:visited {
+  color: #551a8b !important;
+}
+
+a:hover {
+  color: #cc3333 !important;
+}
+
+/* Product title links - MUST be underlined */
+.card__heading a,
+.product-card a,
+.full-unstyled-link,
+.product-grid .card__heading a {
+  color: #0000ee !important;
+  text-decoration: underline !important;
+}
+
+.card__heading a:hover,
+.product-card a:hover {
+  color: #cc3333 !important;
+}
+
+/* Footer links - MUST be classic #0000EE blue */
+.footer a,
+.footer-block a,
+.footer a:link,
+.footer-block a:link,
+footer a,
+footer a:link,
+.footer__content-top a,
+.footer__content-bottom a {
+  color: #0000EE !important;
+  text-decoration: underline !important;
+}
+
+.footer a:visited,
+footer a:visited {
+  color: #551A8B !important;
+}
+
+.footer a:hover,
+footer a:hover {
+  color: #CC3333 !important;
+}
+
+/* Footer background - off-white not pure white */
+.footer,
+footer,
+.footer__content-top,
+.footer__content-bottom,
+.footer-block,
+.footer-block__details-content {
+  background-color: #f0f0f0 !important;
+}
+
+/* Search input and buttons - classic styling, NO border-radius */
+.search__input,
+.field__input,
+input[type="search"],
+input[type="text"],
+input[type="email"],
+input,
+textarea,
+select {
+  border: 2px solid #808080 !important;
+  background-color: #ffffff !important;
+  border-radius: 0 !important;
+}
+
+/* All buttons - classic solid styling, NO border-radius */
+button,
+.button,
+input[type="submit"],
+.btn,
+.shopify-payment-button__button {
+  border: 2px solid #ffffff #808080 #808080 #ffffff !important;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #c0c0c0 100%) !important;
+  border-radius: 0 !important;
+  color: #000000 !important;
+  box-shadow: none !important;
+}
+
+/* Badge/Tag styling - NO border-radius - ULTRA SPECIFIC */
+.badge,
+.card__badge,
+.card__badge span,
+.card__badge .badge,
+.price__badge-sale,
+.price__badge-sale span,
+.price__badge-sold-out,
+.price__badge-sold-out span,
+[class*="badge"],
+[class*="badge"] span,
+span.badge,
+span[class*="badge"],
+.card .badge {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  background-color: #cc0000 !important;
+  color: #ffffff !important;
+  border: 1px solid #990000 !important;
+  padding: 1px 4px !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+}
+
+/* Sold out badge specifically */
+.badge--sold-out,
+.badge--sold-out span,
+.price__badge-sold-out,
+span.badge--sold-out,
+[class*="sold-out"],
+[class*="soldout"] {
+  background-color: #808080 !important;
+  border-color: #666666 !important;
+  border-radius: 0 !important;
+}
+
+/* Quantity input and buttons */
+.quantity,
+.quantity__input,
+.quantity__button {
+  border-radius: 0 !important;
+}
+
+/* Accordion/collapsible sections - table-like bordered style */
+.accordion,
+.accordion__content,
+.collapsible-content,
+details,
+summary,
+.product__accordion,
+.product__accordion details {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.accordion summary,
+.product__accordion summary,
+details summary {
+  background-color: #e0e0e0 !important;
+  border: 1px solid #cccccc !important;
+  border-bottom: 1px solid #999999 !important;
+  padding: 5px 10px !important;
+  margin: 0 !important;
+}
+
+.accordion__content,
+.product__accordion .accordion__content,
+details[open] > div {
+  border: 1px solid #cccccc !important;
+  border-top: none !important;
+  background-color: #f9f9f9 !important;
+  padding: 8px 10px !important;
+}
+
+/* Image with text sections */
+.image-with-text,
+.image-with-text__content,
+.image-with-text__media {
+  border-radius: 0 !important;
+  background-color: #f9f9f9 !important;
+}
+
+/* Reduce spacing globally for compact oldweb feel */
+.section-template--padding,
+.shopify-section--padding {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+/* Cart page container */
+.cart,
+.cart-items,
+.cart__footer {
+  border: 1px solid #cccccc !important;
+  background-color: #ffffff !important;
+}
+
+/* Product grid needs white background since page is gray */
+.product-grid,
+.product-grid-container,
+#ProductGridContainer {
+  background-color: #ffffff !important;
+}
+
+/* Search results container */
+.template-search main,
+.search-results {
+  border: 1px solid #cccccc !important;
+  background-color: #f9f9f9 !important;
+}
+
+/* Filter/facet buttons - OUTSET border style like Win95 */
+.facets__summary,
+.facets__disclosure,
+.mobile-facets__open,
+[class*="facet"] button {
+  border-radius: 0 !important;
+  background: #e0e0e0 !important;
+  background-image: none !important;
+  border: 2px outset #808080 !important;
+}
+
+/* ==========================================================================
+   PRODUCT PAGE FIXES - Gray background, blue links, borders, compact spacing
+   ========================================================================== */
+
+/* Product page main content - gray background */
+.template-product main,
+.template-product #MainContent,
+.template-product .shopify-section,
+.product-section,
+.main-product-section {
+  background-color: #f0f0f0 !important;
+}
+
+/* Product page - all sections need borders */
+.template-product .shopify-section {
+  border: 1px solid #cccccc !important;
+  margin-bottom: 8px !important;
+  padding: 8px !important;
+  background-color: #f9f9f9 !important;
+}
+
+/* Product info container */
+.product,
+.product__info-container,
+.product__media-wrapper,
+.product__info-wrapper {
+  background-color: #f9f9f9 !important;
+}
+
+/* Image with text sections on product page */
+.template-product .image-with-text,
+.image-with-text__grid,
+.image-with-text__content {
+  background-color: #f9f9f9 !important;
+  border: 1px solid #cccccc !important;
+  padding: 8px !important;
+}
+
+/* Multicolumn sections */
+.template-product .multicolumn,
+.template-product .multicolumn-list {
+  background-color: #f9f9f9 !important;
+  border: 1px solid #cccccc !important;
+  padding: 8px !important;
+}
+
+/* Reduce padding/spacing on product page */
+.template-product .shopify-section {
+  padding: 8px !important;
+}
+
+.template-product .page-width {
+  padding: 0 8px !important;
+}
+
+.template-product h2,
+.template-product .h2 {
+  margin-bottom: 6px !important;
+}
+
+/* Product page - ensure ALL links are blue */
+.template-product a,
+.template-product a:link,
+.product a,
+.product a:link,
+.product__info-wrapper a {
+  color: #0000EE !important;
+  text-decoration: underline !important;
+}
+
+/* Header links specifically - MUST be blue */
+.header a,
+.header a:link,
+.header__heading-link,
+.header__menu-item,
+nav a,
+nav a:link {
+  color: #0000EE !important;
+}
+
+/* Don't underline logo */
+.header__heading-link {
+  text-decoration: none !important;
+}
+
+/* But underline nav items */
+.header__menu-item,
+nav a:not(.header__heading-link) {
+  text-decoration: underline !important;
+}
+
+/* ==========================================================================
+   FINAL OVERRIDES - CSS Variables and Ultimate Border-Radius/Shadow Kill
+   This section MUST be at the END of the file to override everything
+   ========================================================================== */
+
+/* Override ALL CSS custom properties for radius and shadow */
+:root,
+html,
+body {
+  --buttons-radius: 0px !important;
+  --buttons-radius-outset: 0px !important;
+  --inputs-radius: 0px !important;
+  --inputs-radius-outset: 0px !important;
+  --variant-pills-radius: 0px !important;
+  --media-radius: 0px !important;
+  --product-card-corner-radius: 0rem !important;
+  --collection-card-corner-radius: 0rem !important;
+  --blog-card-corner-radius: 0rem !important;
+  --badge-corner-radius: 0rem !important;
+  --popup-corner-radius: 0px !important;
+  --text-boxes-radius: 0px !important;
+  --border-radius: 0px !important;
+
+  /* Kill shadows */
+  --buttons-shadow-opacity: 0 !important;
+  --buttons-shadow-visible: 0 !important;
+  --inputs-shadow-opacity: 0 !important;
+  --media-shadow-opacity: 0 !important;
+  --media-shadow-visible: 0 !important;
+  --product-card-shadow-opacity: 0 !important;
+  --collection-card-shadow-opacity: 0 !important;
+  --blog-card-shadow-opacity: 0 !important;
+  --popup-shadow-opacity: 0 !important;
+  --drawer-shadow-opacity: 0 !important;
+  --text-boxes-shadow-opacity: 0 !important;
+  --shadow-blur-radius: 0px !important;
+}
+
+/* ULTIMATE kill - apply directly to all elements */
+*,
+*::before,
+*::after,
+button,
+input,
+select,
+textarea,
+.button,
+.btn,
+.badge,
+.card,
+.card__inner,
+.card__media,
+.banner,
+.banner__box,
+.slideshow,
+.slideshow__slide,
+.image-with-text,
+.multicolumn,
+.collage-card,
+.drawer,
+.modal,
+.popup,
+.quantity,
+.quantity__button,
+.quantity__input,
+.product-form__input label,
+.swatch,
+.swatch-input label,
+[class*="badge"],
+[class*="button"],
+[class*="input"],
+[class*="search"],
+[class*="form"] {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+/* Shopify payment button overrides */
+.shopify-payment-button,
+.shopify-payment-button__button,
+.shopify-payment-button__button--unbranded,
+.shopify-payment-button__more-options {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Accelerated checkout overrides */
+[class*="shopify-accelerated"] {
+  --shopify-accelerated-checkout-button-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Image shadows - kill them */
+img,
+picture,
+.media img,
+.image-with-text img,
+.card__media img {
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* ==========================================================================
+   ADDITIONAL FIXES - Color swatches, search background, remaining radius
+   ========================================================================== */
+
+/* Color swatches need visible borders */
+.swatch,
+.swatch-input,
+.swatch-input label,
+.color-swatch,
+[class*="swatch"],
+.product-grid .color-swatch,
+.card-information .color-swatch,
+.color-swatch-value {
+  border: 1px solid #000000 !important;
+  border-radius: 0 !important;
+}
+
+/* Search results page - gray background */
+.template-search #MainContent,
+.template-search main,
+.template-search .main-content,
+.template-search .shopify-section,
+.search-results-wrapper,
+#SearchResultsProductGrid {
+  background-color: #f0f0f0 !important;
+}
+
+/* Video play button - BEVELED Win95 style */
+.deferred-media__poster-button,
+.video__button,
+[class*="play-button"],
+[class*="video-button"] {
+  border-radius: 0 !important;
+  background: linear-gradient(to bottom, #f0f0f0 0%, #d0d0d0 100%) !important;
+  border: 2px solid #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* All content sections - gray background instead of white */
+.banner__box,
+.banner__content,
+.rich-text,
+.rich-text__blocks,
+.multicolumn-card,
+.image-with-text__content,
+.image-banner__box,
+.text-box,
+[class*="text-box"],
+.content-box {
+  background-color: #f5f5f5 !important;
+  border: 1px solid #cccccc !important;
+}
+
+/* Cart drawer quantity buttons - square */
+.cart-drawer .quantity__button,
+.cart-drawer button,
+.cart-drawer .quantity {
+  border-radius: 0 !important;
+}
+
+/* Filter/facet summary buttons - very aggressive */
+.facets summary,
+.facets__summary,
+.facets-container button,
+.active-facets__button,
+.mobile-facets__open,
+facet-filters-form button,
+.facets-vertical-sort select {
+  border-radius: 0 !important;
+  background-image: none !important;
+  background: #e0e0e0 !important;
+  border: 2px solid #808080 #ffffff #ffffff #808080 !important;
+}
+
+/* Country/locale selector */
+.disclosure__button,
+.localization-selector,
+.localization-form__select,
+select.localization-form__select {
+  border-radius: 0 !important;
+}
+
+/* Search form elements */
+.search__input,
+.search-modal__input,
+.search-modal__close-button,
+.predictive-search__item,
+[type="search"],
+.reset__button {
+  border-radius: 0 !important;
+}
+
+/* Active facets button - has hardcoded 2.6rem border-radius */
+.active-facets__button-inner,
+span.active-facets__button-inner,
+.facets__pill,
+.pill,
+[class*="pill"] {
+  border-radius: 0 !important;
+}
+
+/* Override ALL hardcoded border-radius from component CSS */
+/* Cart drawer quantity */
+.cart-drawer .quantity__button {
+  border-radius: 0 !important;
+}
+
+/* Slider dots and controls */
+.slider-button,
+.slider__buttons button,
+.slideshow__control,
+[class*="slider"] button {
+  border-radius: 0 !important;
+}
+
+/* Swatch input - override CSS variable */
+:root {
+  --swatch-input--border-radius: 0 !important;
+}
+.swatch-input,
+.swatch-input label,
+.color-swatch {
+  border-radius: 0 !important;
+}
+
+/* Quick add button */
+.quick-add__submit,
+.quick-add button {
+  border-radius: 0 !important;
+}
+
+/* Video/media buttons */
+.deferred-media__poster-button,
+.media-badge {
+  border-radius: 0 !important;
+}
+
+/* Product rating stars - keep circles but add override comment */
+/* .rating-star - intentionally keeping circular */
+
+/* ==========================================================================
+   FINAL NUCLEAR OVERRIDES - Absolute last rules to ensure 0 border-radius
+   ========================================================================== */
+
+/* BADGES - BEVELED Win95 style appearance */
+.badge,
+span.badge,
+div.badge,
+.card__badge .badge,
+.card__badge span,
+.card__badge > *,
+.price__badge-sale,
+.price__badge-sold-out,
+.badge--bottom-left,
+.badge--sold-out,
+[class*="badge"],
+[class*="Badge"] {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  /* Win95 beveled button style */
+  background: linear-gradient(to bottom, #f0f0f0 0%, #d0d0d0 100%) !important;
+  border: 2px solid #ffffff #808080 #808080 #ffffff !important;
+  box-shadow: none !important;
+  padding: 2px 6px !important;
+  font-size: 9px !important;
+  font-weight: bold !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  color: #cc0000 !important;
+}
+
+/* Sold out badge - gray variation */
+.badge--sold-out,
+.price__badge-sold-out,
+[class*="sold-out"] .badge,
+[class*="soldout"] {
+  background: linear-gradient(to bottom, #e0e0e0 0%, #b0b0b0 100%) !important;
+  color: #666666 !important;
+}
+
+/* Banner "Shop all" button and all CTA buttons */
+.banner__buttons .button,
+.banner .button,
+.banner__button,
+.slideshow__content .button,
+.rich-text .button,
+.image-with-text .button,
+a.button,
+button.button {
+  border-radius: 0 !important;
+}
+
+/* Newsletter subscribe button */
+.newsletter__button,
+.newsletter-form__button,
+.footer .newsletter-form__button,
+.footer button,
+.footer input[type="submit"],
+form[action*="newsletter"] button {
+  border-radius: 0 !important;
+}
+
+/* Product page fixes */
+.template-product .shopify-section {
+  background-color: #f0f0f0 !important;
+}
+
+.template-product .product,
+.template-product .product__info-wrapper,
+.template-product .product__media-wrapper {
+  background-color: #f9f9f9 !important;
+}
+
+/* Product page - border between image and details */
+.product__media-wrapper {
+  border-right: 1px solid #cccccc !important;
+}
+
+/* Product title - smaller, more compact */
+.product__title,
+.product__title h1 {
+  font-size: 16px !important;
+  margin-bottom: 6px !important;
+}
+
+/* Product page button radius */
+.product-form__buttons button,
+.product-form__submit,
+.product-form__input label,
+.quantity__button {
+  border-radius: 0 !important;
+}
+
+/* Footer links - ensure blue */
+footer a,
+.footer a,
+.footer-block a {
+  color: #0000EE !important;
+}
+
+/* ==========================================================================
+   ADDITIONAL FIXES - Image shadows, checkboxes, backgrounds, compact spacing
+   ========================================================================== */
+
+/* Remove ALL image shadows and filters */
+img,
+picture,
+.media img,
+.card__media img,
+.product__media img,
+.image-with-text img,
+.collage img,
+.banner__media img,
+[class*="image"] img {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Checkboxes - square, gray accent */
+input[type="checkbox"],
+input[type="radio"] {
+  border-radius: 0 !important;
+  accent-color: #808080 !important;
+  border: 1px solid #808080 !important;
+}
+
+/* Content block backgrounds - gray not white */
+.banner__box,
+.banner__content,
+.text-box,
+.content-box,
+.rich-text__blocks,
+.multicolumn-card,
+[class*="text-box"],
+[class*="content-box"],
+.card__content,
+.product-card,
+.article-card,
+.collection-card,
+.slider__slide {
+  background-color: #f5f5f5 !important;
+}
+
+/* More compact spacing */
+.section-padding,
+.shopify-section {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.page-width {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+
+/* All sections need visible borders */
+.shopify-section,
+.collection__grid,
+.featured-collection,
+.featured-products,
+.multimedia-collage,
+.image-banner,
+.slideshow,
+[class*="section"],
+[class*="collection"],
+[class*="featured"] {
+  border: 1px solid #cccccc !important;
+  margin-bottom: 8px !important;
+}
+
+/* Product image containers - no shadow */
+.product__media-wrapper,
+.product__media-item,
+.card__media,
+.media-wrapper,
+.video-wrapper,
+.collage-card__media {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+/* ==========================================================================
+   ABSOLUTE FINAL NUCLEAR OVERRIDES - Applied LAST for maximum specificity
+   ========================================================================== */
+
+/* HOMEPAGE: Banner text box and content container - MAXIMUM SPECIFICITY */
+html body .banner__box,
+html body .content-container,
+html body .banner__content,
+html body .banner .banner__box,
+html body .banner .content-container,
+html body section .banner__box,
+html body section .content-container,
+html body [class*="banner"] .banner__box,
+html body [class*="banner"] .content-container,
+html body .gradient,
+html body .banner__box.gradient,
+html body .content-container.gradient {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+
+/* HOMEPAGE: All buttons everywhere */
+html body button,
+html body .button,
+html body a.button,
+html body input[type="submit"],
+html body input[type="button"],
+html body .banner__buttons button,
+html body .banner__buttons .button,
+html body .banner .button,
+html body .rich-text .button,
+html body form button,
+html body form .button {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+
+/* HOMEPAGE: Product badges - must be square not pill */
+html body .badge,
+html body span.badge,
+html body .card__badge span,
+html body .card__badge .badge,
+html body [class*="badge"],
+html body .price__badge-sale,
+html body .price__badge-sold-out {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+
+/* HOMEPAGE: Price containers */
+html body .price,
+html body .price-item,
+html body .card__information .price,
+html body [class*="price-container"],
+html body .price__container {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+/* HOMEPAGE: Input fields and selects */
+html body input,
+html body select,
+html body textarea,
+html body .field__input,
+html body .search__input,
+html body localization-form select,
+html body localization-form button,
+html body .disclosure__button {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+}
+
+/* HOMEPAGE: Media containers */
+html body .media,
+html body .card__media,
+html body .product__media,
+html body [class*="media"],
+html body img,
+html body picture,
+html body video {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+/* HOMEPAGE: Multicolumn content boxes */
+html body .multicolumn,
+html body .multicolumn-card,
+html body .column__content,
+html body .columns__heading,
+html body [class*="column"] {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+/* GIFT CARD PAGE: Header nav links - FORCE BLUE */
+html body header a,
+html body header nav a,
+html body .header__menu-item,
+html body a.header__menu-item,
+html body .list-menu__item a,
+html body header .list-menu a,
+html body nav .list-menu__item a,
+html body a.link--text,
+html body .link--text {
+  color: #0000ee !important;
+  text-decoration: underline !important;
+}
+
+/* GIFT CARD PAGE: All form elements */
+html body .product-form button,
+html body .product-form input,
+html body .product-form label,
+html body variant-radios label,
+html body quantity-input,
+html body quantity-input button,
+html body quantity-input input,
+html body .quantity__button,
+html body .share-button button,
+html body details.share-button summary {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+/* CART PAGE: Continue shopping and view all buttons */
+html body .cart__ctas a,
+html body .cart__ctas button,
+html body a[href*="collection"],
+html body .cart-drawer button,
+html body .cart-drawer a.button {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+/* SEARCH PAGE: Filter and sort buttons */
+html body .facets button,
+html body .facets summary,
+html body .facets select,
+html body .facets__summary,
+html body [class*="facet"] button,
+html body [class*="sort"] select,
+html body .collection-filters button,
+html body .collection-filters select {
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+}
+
+/* ULTIMATE: Override any remaining calc-based border-radius */
+.global-media-settings img,
+.global-media-settings iframe,
+.global-media-settings model-viewer,
+.global-media-settings video,
+.global-media-settings .placeholder-svg {
+  border-radius: 0 !important;
 }

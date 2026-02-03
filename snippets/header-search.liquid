@@ -68,12 +68,13 @@
               type="reset"
               class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
               aria-label="{{ 'general.search.reset' | t }}"
+              style="border-radius: 0 !important;"
             >
               <span class="svg-wrapper">
                 {{- 'icon-reset.svg' | inline_asset_content -}}
               </span>
             </button>
-            <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+            <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}" style="border-radius: 0 !important;">
               <span class="svg-wrapper">
                 {{- 'icon-search.svg' | inline_asset_content -}}
               </span>

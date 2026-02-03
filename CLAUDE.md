@@ -1,29 +1,56 @@
-# Claude Code Operating Rules (Goosnav Y2K Theme)
+# Goosnav Oldweb Theme Rules
 
-## Mission
-Transform Shopify Dawn into a lightweight, fast, OS2.0-correct theme with an "eBay 2010 + YouTube 2007" aesthetic.
-Primary goal is aesthetic + UX density WITHOUT bloat.
+## Objective
+Converge Dawn into an “oldweb” aesthetic (eBay ~2010 + YouTube ~2007) with minimal bloat.
 
-## Non-Negotiables
-- Stay Shopify OS 2.0: Liquid + JSON templates + sections. No headless.
-- Preserve app compatibility: DO NOT remove @app blocks or break app embeds.
-- Skin-first: prefer CSS over markup changes. Minimal HTML edits.
-- Minimal JS: no frameworks, no heavy libs. Progressive enhancement only.
-- No large refactors. Only touch files required for the current task.
-- Any uncertainty: consult /reference/* and existing Dawn patterns. Do not invent new architecture.
+## Non-negotiables
+- Shopify OS 2.0 correctness: do not break templates/sections/app blocks.
+- Prefer CSS to markup changes.
+- No frontend frameworks.
+- Keep JS minimal; do not add heavy dependencies.
+- Every change must pass:
+  - `shopify theme check`
+  - `node scripts/ai-visual-eval.mjs`
 
-## Sources of Truth
-1) /reference/UI_SPEC.md and screenshots are binding.
-2) /docs/STYLE_TOKENS.md defines design tokens.
-3) /docs/DECISIONS.md records any ambiguity and resolution.
+## Visual test targets
+See `reference/pages.json` for the canonical test URLs.
+- You need to be brutal and nitpicky with your criticisms of the website.
+- You must scour each image of the website and identify any and all errors, no matter how small.
+- Assume each website photo has a ton of errors, especially in terms of the formatting mistakes and design errors.
+- You are likely not to fix everything in one go, so you must iterate multiple times.
+- If you cant fix everything, be honest with what is yet to be done.
 
-## Workflow
-- Work in small PR-sized chunks.
-- Each chunk updates: code + short note in /docs/TASKS.md + any decisions in /docs/DECISIONS.md
-- Must keep performance: avoid increasing JS/CSS/asset weight unless justified.
+## AI Visual Loop
 
-## Definition of Done per chunk
-- Theme still runs via `shopify theme dev`
-- No broken cart/product/collection flows
-- Theme Check passes (`shopify theme check`)
-- Visual target moves closer to reference
+**Prerequisites:**
+- Terminal A must be running: `shopify theme dev --store goosnav-y2k.myshopify.com --port 9292`
+- `GEMINI_API_KEY` must be set in the environment or in a `.env` file at the project root.
+
+**Per-iteration workflow:**
+1. Run `shopify theme check` — fix any lint errors before proceeding.
+2. Run `node scripts/ai-visual-eval.mjs`:
+   - Exit 0 → all pages pass. Output `<promise>DONE</promise>`.
+   - Exit 1 → read every issue the AI printed. Make targeted CSS fixes. Re-run.
+   - Exit 2 → runtime/API error. Fix the error and re-run.
+
+**One-shot manual eval:**
+```
+node scripts/ai-visual-eval.mjs
+```
+
+**Ralph-loop command (copy-paste ready):**
+```
+/ralph-loop "Follow the AI Visual Loop workflow in CLAUDE.md. Each iteration: (1) run shopify theme check and fix any errors, (2) run node scripts/ai-visual-eval.mjs — if it exits 0 all pages pass so output <promise>DONE</promise>, if it exits 1 read every issue the AI printed and make targeted CSS fixes. CSS over markup. No JS frameworks. Do not break OS 2.0 app blocks." --max-iterations 50 --completion-promise "DONE"
+```
+
+**How to start:**
+
+Terminal A:
+```
+shopify theme dev --store goosnav-y2k.myshopify.com --port 9292
+```
+
+Terminal B (inside Claude Code session):
+```
+/ralph-loop <command above>
+``` 

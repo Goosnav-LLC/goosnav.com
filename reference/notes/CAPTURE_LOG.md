@@ -1,7 +1,23 @@
 # Reference capture log
-- date: 2026-02-01T02:28:26.301Z
+- date: 2026-02-01T16:09:38.595Z
 - targets: tools/reference-capture/targets.json
 - headless: true
+
+## salami_homepage_1440
+- url: https://salami.org
+- viewport: 1440x900
+- fullPage: false
+- screenshot: salami_homepage.png
+- html: salami_homepage.html
+- status: ok
+
+## salami_product_1440
+- url: https://salami.org/product/waffle-cat-crossbody-bag
+- viewport: 1440x900
+- fullPage: false
+- screenshot: salami_product.png
+- html: salami_product.html
+- status: ok
 
 ## youtube2007_home_1440
 - url: https://web.archive.org/web/20070715/http://www.youtube.com/

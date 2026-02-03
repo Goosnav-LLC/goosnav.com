@@ -107,7 +107,7 @@ product-recommendations.is-accordion + .accordion {
 }
 
 .complementary-products__container .card--card .card__inner .card__media {
-  border-radius: calc(var(--corner-radius) - var(--border-width) - var(--image-padding));
+  border-radius: 0; /* Y2K: explicit 0 */
 }
 
 .complementary-products__container .card--horizontal .quick-add {

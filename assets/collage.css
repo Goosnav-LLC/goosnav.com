@@ -151,7 +151,7 @@
 .collage-card .media {
   height: 100%;
   overflow: hidden;
-  border-radius: calc(var(--border-radius) - var(--border-width) - var(--image-padding));
+  border-radius: 0; /* Y2K: explicit 0 */
 }
 
 .collage-card .deferred-media {

@@ -1,6 +1,24 @@
 {
   "jobs": [
     {
+      "id": "salami_homepage_1440",
+      "url": "https://salami.org",
+      "viewport": { "width": 1440, "height": 900 },
+      "screenshot": "salami_homepage.png",
+      "saveHtml": true,
+      "html": "salami_homepage.html",
+      "fullPage": false
+    },
+    {
+      "id": "salami_product_1440",
+      "url": "https://salami.org/product/waffle-cat-crossbody-bag",
+      "viewport": { "width": 1440, "height": 900 },
+      "screenshot": "salami_product.png",
+      "saveHtml": true,
+      "html": "salami_product.html",
+      "fullPage": false
+    },
+    {
       "id": "youtube2007_home_1440",
       "url": "https://web.archive.org/web/20070715/http://www.youtube.com/",
       "viewport": { "width": 1440, "height": 900 },

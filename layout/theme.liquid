@@ -115,8 +115,8 @@
         --media-padding: {{ settings.media_padding }}px;
         --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
         --media-border-width: {{ settings.media_border_thickness }}px;
-        --media-radius: {{ settings.media_radius }}px;
-        --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
+        --media-radius: 0px; /* Y2K: forced to 0 */
+        --media-shadow-opacity: 0; /* Y2K: forced to 0 */
         --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
         --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
         --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
@@ -126,51 +126,51 @@
         --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
         --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
-        --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
+        --product-card-corner-radius: 0rem; /* Y2K: forced to 0 */
         --product-card-text-alignment: {{ settings.card_text_alignment }};
         --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
         --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
-        --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
-        --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --product-card-shadow-opacity: 0; /* Y2K: forced to 0 */
+        --product-card-shadow-visible: 0; /* Y2K: forced to 0 */
         --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
         --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
         --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
 
         --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
-        --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
+        --collection-card-corner-radius: 0rem; /* Y2K: forced to 0 */
         --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
         --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
         --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
-        --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --collection-card-shadow-opacity: 0; /* Y2K: forced to 0 */
+        --collection-card-shadow-visible: 0; /* Y2K: forced to 0 */
         --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
         --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
         --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
 
         --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
-        --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
+        --blog-card-corner-radius: 0rem; /* Y2K: forced to 0 */
         --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
         --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
         --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
-        --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --blog-card-shadow-opacity: 0; /* Y2K: forced to 0 */
+        --blog-card-shadow-visible: 0; /* Y2K: forced to 0 */
         --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
         --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
         --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
 
-        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
+        --badge-corner-radius: 0rem; /* Y2K: forced to 0 */
 
         --popup-border-width: {{ settings.popup_border_thickness }}px;
         --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
-        --popup-corner-radius: {{ settings.popup_corner_radius }}px;
-        --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
+        --popup-corner-radius: 0px; /* Y2K: forced to 0 */
+        --popup-shadow-opacity: 0; /* Y2K: forced to 0 */
         --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
         --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
         --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
 
         --drawer-border-width: {{ settings.drawer_border_thickness }}px;
         --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
-        --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
+        --drawer-shadow-opacity: 0; /* Y2K: forced to 0 */
         --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
         --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
         --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
@@ -185,35 +185,35 @@
 
         --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
         --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
-        --text-boxes-radius: {{ settings.text_boxes_radius }}px;
-        --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
-        --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --text-boxes-radius: 0px; /* Y2K: forced to 0 */
+        --text-boxes-shadow-opacity: 0; /* Y2K: forced to 0 */
+        --text-boxes-shadow-visible: 0; /* Y2K: forced to 0 */
         --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
         --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
         --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
 
-        --buttons-radius: {{ settings.buttons_radius }}px;
-        --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
+        --buttons-radius: 0px; /* Y2K: forced to 0 */
+        --buttons-radius-outset: 0px; /* Y2K: forced to 0 */
         --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;
         --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
-        --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
-        --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
+        --buttons-shadow-opacity: 0; /* Y2K: forced to 0 */
+        --buttons-shadow-visible: 0; /* Y2K: forced to 0 */
         --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
         --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
         --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
         --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
 
-        --inputs-radius: {{ settings.inputs_radius }}px;
+        --inputs-radius: 0px; /* Y2K: forced to 0 */
         --inputs-border-width: {{ settings.inputs_border_thickness }}px;
         --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
-        --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
+        --inputs-shadow-opacity: 0; /* Y2K: forced to 0 */
         --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
         --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
         --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
         --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
-        --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
+        --inputs-radius-outset: 0px; /* Y2K: forced to 0 */
 
-        --variant-pills-radius: {{ settings.variant_pills_radius }}px;
+        --variant-pills-radius: 0px; /* Y2K: forced to 0 */
         --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
         --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
         --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
@@ -256,8 +256,38 @@
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'y2k-tokens.css' | asset_url | stylesheet_tag }}
-    {{ 'y2k-component-overrides.css' | asset_url | stylesheet_tag }}
+
+    {%- comment -%} Y2K early overrides - CSS variables forced to 0 {%- endcomment -%}
+    <style id="y2k-early-overrides">
+      :root {
+        --buttons-radius: 0px !important;
+        --buttons-radius-outset: 0px !important;
+        --inputs-radius: 0px !important;
+        --inputs-radius-outset: 0px !important;
+        --badge-corner-radius: 0rem !important;
+        --media-radius: 0px !important;
+        --product-card-corner-radius: 0rem !important;
+        --text-boxes-radius: 0px !important;
+        --popup-corner-radius: 0px !important;
+        --variant-pills-radius: 0px !important;
+      }
+      /* OLDWEB: Off-white background like eBay 2004 */
+      html, body {
+        background-color: #f0f0f0 !important;
+      }
+      /* OLDWEB: Boxed layout with border */
+      main#MainContent, #MainContent {
+        max-width: 960px !important;
+        margin: 20px auto !important;
+        background-color: #ffffff !important;
+        border: 1px solid #cccccc !important;
+        padding: 10px !important;
+      }
+      /* Page-width containers should also respect the box */
+      .page-width {
+        max-width: 940px !important;
+      }
+    </style>
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}
@@ -298,6 +328,10 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {%- comment -%} Y2K Oldweb styling - MUST load last to override all component CSS {%- endcomment -%}
+    {{ 'y2k-tokens.css' | asset_url | stylesheet_tag }}
+    {{ 'y2k-component-overrides.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -374,5 +408,1159 @@
     {%- if settings.cart_type == 'drawer' -%}
       <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    {%- comment -%} Y2K FINAL OVERRIDES - Must be absolutely last to override lazy-loaded CSS {%- endcomment -%}
+    <style>
+      /* NUCLEAR border-radius kill - absolutely everything */
+      *, *::before, *::after {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+      }
+      /* NUCLEAR box-shadow kill */
+      *, img, picture, .media, .shopify-section, .card {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+      }
+
+      /* Y2K OFF-WHITE BACKGROUNDS - no pure white */
+      body, html {
+        background-color: #f0f0f0 !important;
+      }
+      main, .main-content, #MainContent, [role="main"] {
+        background-color: #f0f0f0 !important;
+        max-width: 980px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border: 1px solid #808080 !important;
+      }
+      .shopify-section {
+        background-color: #f0f0f0 !important;
+      }
+      .page-width {
+        background-color: transparent !important;
+        max-width: 960px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* Cards and content boxes stay white but with visible borders */
+      .card, .card__inner, .product-card-wrapper, .collection-list__item {
+        background-color: #ffffff !important;
+        border: 1px solid #cccccc !important;
+      }
+
+      /* Product grid items get borders */
+      .grid__item, .product-grid .grid__item, .card-wrapper {
+        border: 1px solid #cccccc !important;
+        margin-bottom: 4px !important;
+      }
+
+      /* SECTION BORDERS - stronger, table-like */
+      .shopify-section {
+        border: 1px solid #999999 !important;
+        margin-bottom: 2px !important;
+        padding: 8px !important;
+      }
+      .section-header, .header-wrapper {
+        border-bottom: 2px solid #003d7a !important;
+        max-width: 980px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+
+      /* HEADER NAV LINKS - classic blue */
+      .header a, .header__menu-item, header a,
+      .header__inline-menu a, .list-menu__item a,
+      nav a, .nav a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+      .header a:visited, header a:visited, nav a:visited {
+        color: #551a8b !important;
+      }
+
+      /* All content sections need visible borders */
+      .featured-collection, .collection-list, .image-with-text,
+      .rich-text, .multicolumn, .slideshow, .banner,
+      [class*="featured"], [class*="collection"] {
+        border: 1px solid #999999 !important;
+        padding: 8px !important;
+        margin-bottom: 4px !important;
+      }
+
+      /* Product list items - fully boxed */
+      .product-list li, .product-grid-item, .grid__item,
+      .card-wrapper, .collection-product-card {
+        border: 1px solid #cccccc !important;
+        padding: 4px !important;
+        margin-bottom: 4px !important;
+        background-color: #ffffff !important;
+      }
+
+      /* BUTTONS - Win95 beveled style, NO rounded corners */
+      button, .button, .btn,
+      [class*="button"], [class*="Button"],
+      input[type="submit"], input[type="button"],
+      .shopify-payment-button button,
+      .cart__checkout-button,
+      .product-form__submit,
+      .newsletter-form__button,
+      .localization-form__button,
+      .share-button, .share-button__button,
+      .quantity__button,
+      .search__button {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        background: linear-gradient(to bottom, #e8e8e8 0%, #c8c8c8 100%) !important;
+        border: 2px outset #c0c0c0 !important;
+        border-color: #ffffff #808080 #808080 #ffffff !important;
+        color: #000000 !important;
+      }
+      button:active, .button:active, .btn:active,
+      input[type="submit"]:active, input[type="button"]:active,
+      button:focus, .button:focus {
+        border-style: inset !important;
+        border-color: #808080 #ffffff #ffffff #808080 !important;
+      }
+
+      /* SOLD OUT badge - specific styling */
+      .badge--sold-out, [class*="sold-out"], [class*="soldout"],
+      .price__badge-sold-out {
+        border-radius: 0 !important;
+        background: linear-gradient(to bottom, #e8e8e8 0%, #c8c8c8 100%) !important;
+        border: 2px outset #c0c0c0 !important;
+        color: #cc0000 !important;
+      }
+
+      /* INPUT FIELDS - square, inset border */
+      input, textarea, select,
+      input[type="text"], input[type="email"], input[type="search"],
+      input[type="number"], input[type="tel"], input[type="password"],
+      .field__input, .select__select,
+      .quantity__input, .search-modal__input,
+      .localization-selector, .disclosure__button {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        border: 2px inset #c0c0c0 !important;
+        border-color: #808080 #ffffff #ffffff #808080 !important;
+        background-color: #ffffff !important;
+      }
+
+      /* Denomination/variant buttons (gift card page) */
+      .product-form__input label,
+      .product-form__input input[type="radio"] + label,
+      variant-radios label,
+      .variant-input label {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        background: linear-gradient(to bottom, #e8e8e8 0%, #c8c8c8 100%) !important;
+        border: 2px outset #c0c0c0 !important;
+        border-color: #ffffff #808080 #808080 #ffffff !important;
+      }
+
+      /* FACETS / FILTERS - active state should use inset, not thick black */
+      .facets__summary[aria-expanded="true"],
+      .facets__summary:focus,
+      .facets__summary.is-active,
+      [aria-pressed="true"],
+      [aria-selected="true"] {
+        border: 2px inset #808080 !important;
+        background: #e0e0e0 !important;
+      }
+
+      /* BADGES - beveled look */
+      .badge, span.badge, [class*="badge"],
+      .price__badge-sale, .price__badge-sold-out {
+        border-radius: 0 !important;
+        background: linear-gradient(to bottom, #f0f0f0 0%, #d0d0d0 100%) !important;
+        border: 2px outset #c0c0c0 !important;
+      }
+
+      /* ACCORDIONS - square */
+      .accordion, .accordion__content, details, summary {
+        border-radius: 0 !important;
+      }
+
+      /* QUANTITY SELECTOR - square */
+      .quantity, .quantity__input, .quantity__button,
+      quantity-input, .quantity-popover__info {
+        border-radius: 0 !important;
+      }
+
+      /* SHARE BUTTONS - square */
+      .share-button, .share-button__button, [class*="share"] button {
+        border-radius: 0 !important;
+      }
+
+      /* NEWSLETTER / FORMS in footer */
+      .footer input, .footer button,
+      .newsletter-form__field-wrapper input,
+      .newsletter-form__button {
+        border-radius: 0 !important;
+      }
+
+      /* Checkboxes - native style */
+      input[type="checkbox"], input[type="radio"] {
+        accent-color: #808080 !important;
+        -webkit-appearance: checkbox !important;
+        appearance: checkbox !important;
+        border-radius: 0 !important;
+      }
+
+      /* HARDCODED BORDER-RADIUS OVERRIDES */
+      /* Facets active button - hardcoded 2.6rem in component-facets.css */
+      span.active-facets__button-inner,
+      .active-facets__button-inner,
+      .facets__summary,
+      .facets summary,
+      facet-filters-form summary {
+        border-radius: 0 !important;
+      }
+
+      /* Swatches - hardcoded 50% in component-swatch.css */
+      .swatch, .swatch-input, [class*="swatch"],
+      .variant-input__label, .color-swatch {
+        --swatch-input--border-radius: 0 !important;
+        --swatch--border-radius: 0 !important;
+        border-radius: 0 !important;
+      }
+
+      /* Media circle - hardcoded 50% in base.css */
+      .media--circle {
+        border-radius: 0 !important;
+      }
+
+      /* Cart count bubble - hardcoded 100% in base.css */
+      .cart-count-bubble {
+        border-radius: 0 !important;
+      }
+
+      /* Video/media buttons - hardcoded 50% */
+      .deferred-media__poster-button,
+      .slider-button, .slider-counter,
+      .product__media-icon, .product-media-modal__btn,
+      [class*="video"] button, [class*="media"] button {
+        border-radius: 0 !important;
+      }
+
+      /* Banner box - ensure no rounded corners */
+      .banner__box, .banner__content, .content-container,
+      .slideshow__text-wrapper, .slideshow__text {
+        border-radius: 0 !important;
+      }
+
+      /* Header nav links - force blue with max specificity */
+      .header a, header a, .header__menu-item,
+      .list-menu__item a, .header__inline-menu a,
+      a.header__menu-item, a[class*="menu-item"],
+      .header .list-menu a,
+      body .header a, body header a,
+      html body .header a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+
+      /* Product list items - off-white background */
+      .search__results li, .search-results li,
+      .product-list li, ul.product-list > li,
+      .predictive-search__result-group li {
+        background-color: #f5f5f5 !important;
+      }
+
+      /* Price badge - muted styling */
+      .price__badge-sale, .price-badge, .price__regular,
+      .badge--sale, [class*="price"] .badge {
+        background-color: #e0e0e0 !important;
+        color: #333333 !important;
+        border: 1px solid #999999 !important;
+      }
+
+      /* Kill all shadows everywhere - ultra aggressive */
+      *, *::before, *::after,
+      .product, .product__info-wrapper, .product__media-wrapper,
+      main, #MainContent, .shopify-section,
+      .card, .card__inner, [class*="product"],
+      img, picture, .media, video {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+      }
+
+      /* Banner/slideshow buttons - flat styling */
+      .banner button, .banner .button,
+      .slideshow button, .slideshow .button,
+      .banner__box button, .banner__box .button {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        border: 2px outset #c0c0c0 !important;
+        box-shadow: none !important;
+      }
+
+      /* Video play buttons - square */
+      .deferred-media__poster-button,
+      [class*="play"] button, [class*="video"] button,
+      .video-section button, button[class*="play"] {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+      }
+
+      /* Newsletter form - square elements */
+      .newsletter input, .newsletter button,
+      .newsletter-form input, .newsletter-form button,
+      .footer__newsletter input, .footer__newsletter button,
+      [class*="newsletter"] input, [class*="newsletter"] button,
+      .email-signup input, .email-signup button {
+        border-radius: 0 !important;
+        background: #ffffff !important;
+        border: 2px inset #c0c0c0 !important;
+      }
+      .newsletter button, .newsletter-form button,
+      .footer__newsletter button, [class*="newsletter"] button {
+        background: #e0e0e0 !important;
+        border: 2px outset #c0c0c0 !important;
+      }
+
+      /* Search clear button - square */
+      .search button, .search .reset__button,
+      button.reset, button[type="reset"],
+      [class*="clear"] button, button[class*="clear"],
+      .field__button, .search__button {
+        border-radius: 0 !important;
+      }
+
+      /* ULTRA SPECIFIC OVERRIDES for AI-flagged elements */
+      /* Localization/country selector */
+      .localization-form, .localization-form button,
+      .disclosure, .disclosure__button, .disclosure__list,
+      localization-form, localization-form button {
+        border-radius: 0 !important;
+      }
+
+      /* Accordions on product page */
+      .accordion, .accordion summary, .accordion__content,
+      details.accordion, summary.accordion__title,
+      .product__accordion, [class*="accordion"] {
+        border-radius: 0 !important;
+      }
+
+      /* View all buttons */
+      .button, a.button, .btn, a.btn,
+      .button--full-width, .button--primary, .button--secondary,
+      [class*="button"]:not(input) {
+        border-radius: 0 !important;
+      }
+
+      /* Product form variant selectors/checkboxes */
+      .product-form__input, .product-form__input label,
+      variant-radios, variant-radios label,
+      .variant-input, .variant-input label {
+        border-radius: 0 !important;
+      }
+
+      /* NUCLEAR - ALL checkboxes must be square */
+      input[type="checkbox"],
+      input[type="checkbox"]::before,
+      input[type="checkbox"]::after,
+      .checkbox, [class*="checkbox"],
+      input[type="radio"],
+      .facets__label, .facets input,
+      .collection-filters input,
+      .collection-filters label {
+        border-radius: 0 !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+      }
+
+      /* ALL containers/cards/collage items must be square */
+      .collage, .collage__item, .collage-card,
+      .card, .card-wrapper, .card__content, .card__inner,
+      .collection-card, .blog-card, .article-card,
+      .product-card, .product-card-wrapper,
+      section, .section, .shopify-section,
+      .page-width, .container, .wrapper,
+      .grid__item, .grid-item, [class*="grid"],
+      .multicolumn, .multicolumn-card,
+      .image-with-text, .image-with-text__content,
+      .rich-text, .rich-text__blocks,
+      div[class*="banner"], div[class*="slide"],
+      .hero, .hero__content, .hero__box,
+      article, aside, main, .content-container {
+        border-radius: 0 !important;
+      }
+
+      /* Product images - TRIPLE nuclear shadow kill */
+      .product__media img, .product__media picture,
+      .product__media-item img, .product-media-modal img,
+      .media img, .media picture, .media video,
+      .card__media img, .card-media img,
+      .thumbnail img, .thumbnail-list img,
+      [class*="product"] img, [class*="media"] img,
+      img.motion-reduce, img[loading], picture img {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+        drop-shadow: none !important;
+      }
+
+      /* Badges - SOLD OUT, Sale, etc */
+      .badge, [class*="badge"], .card__badge,
+      .price__badge-sale, .price__badge-sold-out,
+      .sold-out, .sale-badge, span[class*="badge"] {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        color: #333 !important;
+      }
+
+      /* Search/filter facets buttons */
+      .facets button, .facets__button,
+      .facets__disclosure, .facets summary,
+      .facet-filters button, .active-facets button,
+      .mobile-facets button, .mobile-facets__open,
+      button[aria-controls*="facet"], [class*="facet"] button,
+      .disclosure button, .disclosure__button {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        border: 2px outset #c0c0c0 !important;
+      }
+
+      /* Input fields - all must be square */
+      input, textarea, select,
+      input[type="text"], input[type="email"], input[type="search"],
+      input[type="number"], input[type="password"], input[type="tel"],
+      .field, .field__input, .form__input,
+      .search__input, .newsletter__input {
+        border-radius: 0 !important;
+        border: 2px inset #c0c0c0 !important;
+      }
+
+      /* Select dropdowns */
+      select, .select, .select__select,
+      [class*="select"] select, .custom-select {
+        border-radius: 0 !important;
+        border: 2px inset #c0c0c0 !important;
+        background: #fff !important;
+      }
+
+      /* NUCLEAR: ALL links must be blue and underlined */
+      a, a:link, a:visited, a:hover, a:active,
+      .link, [class*="link"], [role="link"],
+      .footer a, footer a, .footer__content a,
+      .header a, header a, nav a,
+      .product-card a, .card a, .card-wrapper a,
+      .product__title a, h1 a, h2 a, h3 a, h4 a,
+      body a, html body a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+      a:visited {
+        color: #551a8b !important;
+      }
+
+      /* Price badges - square corners, muted colors */
+      .price, .price-item, .price__container,
+      .price__sale, .price__regular,
+      span[class*="price"], div[class*="price"],
+      .price__badge, .price__badge-sale, .price__badge-sold-out {
+        border-radius: 0 !important;
+      }
+
+      /* All buttons everywhere - square corners */
+      button, .button, .btn, input[type="submit"], input[type="button"],
+      [class*="button"], a.button, a.btn,
+      .product-form button, .product-form .button,
+      .share-button button, .quantity button,
+      .quantity__button, .quantity-selector button {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        border: 2px outset #c0c0c0 !important;
+      }
+
+      /* Country/localization selectors */
+      .localization-selector, .disclosure,
+      .disclosure__button, .disclosure__list,
+      localization-form select, localization-form button,
+      .country-selector, [class*="country"] select {
+        border-radius: 0 !important;
+      }
+
+      /* NUCLEAR: Remove all gradients */
+      *, *::before, *::after,
+      button, .button, input, select,
+      .badge, .price, .card, .product-card,
+      [class*="badge"], [class*="price"] {
+        background-image: none !important;
+      }
+
+      /* NUCLEAR: Flat button style - no 3D effects */
+      button, .button, .btn, input[type="submit"], input[type="button"],
+      [class*="button"], .quantity__button {
+        background: #e0e0e0 !important;
+        background-image: none !important;
+        border: 1px solid #767676 !important;
+        border-radius: 0 !important;
+      }
+
+      /* Product image containers - square */
+      .product__media, .product__media-wrapper,
+      .product__media-item, .product-media-container,
+      .media, .media--square, .media--portrait,
+      .image-with-text__media, .image-with-text__media-item,
+      .card__media, .card-media, .product-card-wrapper,
+      img, picture, video {
+        border-radius: 0 !important;
+      }
+
+      /* Filter/facet buttons - flat */
+      .facets__disclosure, .facets summary,
+      .facets__summary, details[class*="facet"],
+      .mobile-facets__open, [class*="filter"] button,
+      .active-facets__button, .active-facets__button-wrapper {
+        background: #e0e0e0 !important;
+        background-image: none !important;
+        border: 1px solid #767676 !important;
+        border-radius: 0 !important;
+      }
+
+      /* Product price containers - flat grey */
+      .price-item__container, .price-container,
+      [class*="price-container"], .price__container,
+      .price-item--sale, .price-item--regular {
+        background: #e0e0e0 !important;
+        background-image: none !important;
+        border-radius: 0 !important;
+      }
+
+      /* Badges - flat */
+      .badge, .card__badge, .card__badge-list,
+      [class*="badge"], span.badge,
+      .sold-out-badge, .sale-badge {
+        background: #e0e0e0 !important;
+        background-image: none !important;
+        border: 1px solid #767676 !important;
+        border-radius: 0 !important;
+      }
+
+      /* Grey bar under prices - make square */
+      .card__information, .card__content,
+      .product-card__info, [class*="product-card"] > div {
+        border-radius: 0 !important;
+      }
+
+      /* PRODUCT PAGE SPECIFIC: denomination/variant buttons */
+      .product-form__input input,
+      .product-form__input label,
+      .product-form__buttons button,
+      .product-form__submit,
+      .product-form .shopify-payment-button button,
+      .shopify-payment-button__button,
+      fieldset input, fieldset label,
+      variant-selects select,
+      variant-radios input,
+      variant-radios label,
+      .variant-input-wrapper input,
+      .variant-input-wrapper label {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        background-image: none !important;
+        border: 1px solid #767676 !important;
+      }
+
+      /* Quantity inputs/buttons */
+      quantity-input, quantity-input input,
+      quantity-input button,
+      .quantity, .quantity__input,
+      .quantity__button, .quantity button,
+      input[name="quantity"], input[type="number"] {
+        border-radius: 0 !important;
+        background: #fff !important;
+        border: 1px solid #767676 !important;
+      }
+
+      /* Share button */
+      .share-button, .share-button button,
+      .share-button details, .share-button summary,
+      button[class*="share"], [class*="share"] button {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        border: 1px solid #767676 !important;
+      }
+
+      /* Search field icons/buttons - square containers */
+      .search .field__button,
+      .search .reset__button,
+      .search__input, .search-modal__form input,
+      .predictive-search button,
+      search-form button,
+      .header__search-button,
+      header button[aria-label*="Search"],
+      .header__icon--search {
+        border-radius: 0 !important;
+      }
+
+      /* Country/localization selector - everywhere */
+      localization-form, localization-form button,
+      localization-form select,
+      .localization-selector button,
+      .localization-selector select,
+      .disclosure__button,
+      button[aria-controls*="country"],
+      [class*="country"] button, [class*="country"] select {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        border: 1px solid #767676 !important;
+      }
+
+      /* Force product form buttons to flat style */
+      .product__submit-button,
+      .product-form__cart-submit,
+      button[name="add"],
+      form[action*="cart/add"] button {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+        background-image: none !important;
+        border: 1px solid #767676 !important;
+      }
+
+      /* Email box shadow removal */
+      .email-signup-form input,
+      .newsletter input,
+      .footer input[type="email"],
+      input[placeholder*="Email"],
+      input[placeholder*="email"] {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        border-radius: 0 !important;
+        border: 2px inset #c0c0c0 !important;
+      }
+
+      /* Header navigation - blue links everywhere */
+      header a, .header a, nav a,
+      .header__menu-item, .list-menu__item a,
+      header nav a, header .header a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+
+      /* ============================================
+         ULTRA NUCLEAR - THIS IS THE FINAL OVERRIDE
+         Must catch EVERYTHING with border-radius
+         ============================================ */
+      *, *::before, *::after,
+      html *, html *::before, html *::after,
+      body *, body *::before, body *::after {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+      }
+
+      /* Reset all CSS custom properties that could affect border-radius */
+      :root, html, body, *, *::before, *::after {
+        --border-radius: 0 !important;
+        --buttons-radius: 0 !important;
+        --buttons-radius-outset: 0 !important;
+        --inputs-radius: 0 !important;
+        --inputs-radius-outset: 0 !important;
+        --badge-corner-radius: 0 !important;
+        --media-radius: 0 !important;
+        --product-card-corner-radius: 0 !important;
+        --text-boxes-radius: 0 !important;
+        --popup-corner-radius: 0 !important;
+        --variant-pills-radius: 0 !important;
+        --collection-card-corner-radius: 0 !important;
+        --blog-card-corner-radius: 0 !important;
+        --swatch-input--border-radius: 0 !important;
+        --swatch--border-radius: 0 !important;
+        --corner-radius: 0 !important;
+      }
+
+      /* Force ALL links to be blue - even more aggressive */
+      a, a:link, a:visited, a:hover, a:active,
+      html a, html a:link, html a:visited,
+      body a, body a:link, body a:visited,
+      header a, .header a, nav a, footer a,
+      .header__menu-item, .list-menu a,
+      h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+      p a, span a, div a, li a,
+      [class*="link"], [class*="menu"] a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+      a:visited {
+        color: #551a8b !important;
+      }
+
+      /* Hide browser native search cancel button */
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-decoration,
+      input[type="search"]::-webkit-search-results-button,
+      input[type="search"]::-webkit-search-results-decoration {
+        display: none !important;
+        -webkit-appearance: none !important;
+      }
+
+      /* Make collage/media elements square with solid borders */
+      .collage, .collage__item, .collage__card,
+      .multimedia-collage, .multimedia-collage__item,
+      .media, .media--square, [class*="media"],
+      .card__media, .image-with-text__media {
+        border-radius: 0 !important;
+        border: 1px solid #cccccc !important;
+      }
+
+      /* Section borders should be visible and solid */
+      .section, .shopify-section,
+      .collection-list, .product-list,
+      [class*="section"], [class*="collection"] {
+        border: 1px solid #cccccc !important;
+      }
+
+      /* Product list item borders */
+      .product-list__item, .collection-product-card,
+      .card-wrapper, .card-product,
+      ul li.card, ul li.product,
+      .featured-collection__item {
+        border: 1px solid #cccccc !important;
+      }
+
+      /* FINAL NUCLEAR: Remove ALL browser default form styling */
+      button, input, select, textarea,
+      input[type="text"], input[type="email"], input[type="search"],
+      input[type="number"], input[type="submit"], input[type="button"],
+      html button, html input, html select,
+      body button, body input, body select {
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+      }
+
+      /* Badges - force absolutely square */
+      .badge, [class*="badge"], span[class*="badge"],
+      .card__badge, .price__badge, [class*="price__badge"],
+      .sold-out, .sale, [class*="sold-out"], [class*="sale"] {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* Content containers - square with visible borders */
+      .content-container, .banner__box,
+      .slideshow__text, .slideshow__text-wrapper,
+      [class*="content-container"], [class*="text-box"] {
+        border-radius: 0 !important;
+        border: 1px solid #999999 !important;
+      }
+
+      /* Image containers - no radius */
+      .media, [class*="media"], .image,
+      picture, img, video {
+        border-radius: 0 !important;
+      }
+
+      /* ABSOLUTE MAXIMUM SPECIFICITY OVERRIDES */
+      /* Triple-stacked selectors for maximum weight */
+      html body main button,
+      html body main input,
+      html body main select,
+      html body main .button,
+      html body footer button,
+      html body footer input,
+      html body header button,
+      html body header input,
+      html body header select {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        background-image: none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+      }
+
+      /* Price containers */
+      html body .price,
+      html body .price-item,
+      html body [class*="price"],
+      html body span.price-item,
+      html body .card__information .price {
+        border-radius: 0 !important;
+        background: #e0e0e0 !important;
+      }
+
+      /* Newsletter/email form - max specificity */
+      html body footer .newsletter input,
+      html body footer .newsletter button,
+      html body footer form input,
+      html body footer form button,
+      html body .footer form input,
+      html body .footer form button {
+        border-radius: 0 !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+      }
+
+      /* Banner box - max specificity */
+      html body .banner .banner__box,
+      html body .banner .content-container,
+      html body section.banner .banner__box,
+      html body .shopify-section .banner__box {
+        border-radius: 0 !important;
+        border: 1px solid #999 !important;
+      }
+
+      /* Facets/filters - max specificity */
+      html body .facets button,
+      html body .facets summary,
+      html body details.facets__disclosure,
+      html body .facets__summary span {
+        border-radius: 0 !important;
+        background-image: none !important;
+        background: #e0e0e0 !important;
+      }
+
+      /* Collage/multimedia elements - square */
+      html body .collage,
+      html body .collage__item,
+      html body .collage__card,
+      html body .multimedia-collage,
+      html body .multicolumn,
+      html body .multicolumn-card,
+      html body .columns__heading,
+      html body .column__content,
+      html body [class*="collage"],
+      html body [class*="multicolumn"] {
+        border-radius: 0 !important;
+      }
+
+      /* Product thumbnails - square */
+      html body .thumbnail,
+      html body .thumbnail-list img,
+      html body .product__media-item img,
+      html body .card__media img,
+      html body .card__media picture,
+      html body ul li img,
+      html body .product-list img {
+        border-radius: 0 !important;
+      }
+
+      /* ALL LINKS - MAXIMUM blue enforcement */
+      html body a:not(.button):not(.btn),
+      html body a:link:not(.button),
+      html body a:visited:not(.button),
+      html body header a,
+      html body nav a,
+      html body footer a,
+      html body main a:not(.button),
+      html body .card a,
+      html body h1 a, html body h2 a, html body h3 a,
+      html body p a, html body li a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+
+      /* Payment icons - oldweb grayscale */
+      .payment-icons img,
+      .payment-icons svg,
+      .footer__payment img,
+      .footer__payment svg,
+      [class*="payment"] img,
+      [class*="payment"] svg,
+      img[src*="payment"],
+      .list-payment img {
+        filter: grayscale(100%) !important;
+        -webkit-filter: grayscale(100%) !important;
+        opacity: 0.7 !important;
+      }
+
+      /* Header logo link - force blue */
+      html body .header__heading-link,
+      html body a.header__heading-link,
+      html body .header__heading a,
+      html body h1.header__heading a,
+      html body .link--text,
+      html body a.link--text,
+      html body .header a.link {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+
+      /* Override link--text class that sets links to text color */
+      .link--text, a.link--text {
+        color: #0000ee !important;
+      }
+
+      /* SUPER RETRO buttons - outset border style */
+      html body button,
+      html body .button,
+      html body input[type="submit"],
+      html body input[type="button"],
+      html body [class*="button"]:not(a),
+      html body summary,
+      html body .disclosure__button,
+      html body .facets__summary {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        background: #d4d4d4 !important;
+        background-image: none !important;
+        border: 2px outset #808080 !important;
+        box-shadow: none !important;
+      }
+      html body button:active,
+      html body .button:active,
+      html body input[type="submit"]:active {
+        border-style: inset !important;
+      }
+
+      /* SUPER RETRO inputs - inset border style */
+      html body input[type="text"],
+      html body input[type="email"],
+      html body input[type="search"],
+      html body input[type="number"],
+      html body input[type="password"],
+      html body textarea,
+      html body select {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        background: #ffffff !important;
+        border: 2px inset #808080 !important;
+        box-shadow: none !important;
+      }
+
+      /* Main content - slightly off-white */
+      html body main,
+      html body #MainContent,
+      html body .shopify-section:not(.section-header) {
+        background-color: #fafafa !important;
+      }
+
+      /* Banner text box - off-white background */
+      .banner__box, .content-container,
+      .slideshow__text, .slideshow__text-wrapper,
+      html body .banner__box,
+      html body .content-container {
+        background-color: #f0f0f0 !important;
+        border: 1px solid #808080 !important;
+      }
+
+      /* Stronger borders on major sections */
+      .shopify-section, main section,
+      .section, [class*="section"],
+      .product-grid, .collection-list,
+      #MainContent, main {
+        border-color: #808080 !important;
+      }
+
+      /* Border override for boxed sections */
+      html body .shopify-section {
+        border: 1px solid #808080 !important;
+        margin-bottom: 5px !important;
+      }
+
+      /* Product badges - super square */
+      html body .badge,
+      html body [class*="badge"],
+      html body span.badge,
+      html body .card__badge,
+      html body .price__badge-sale,
+      html body .price__badge-sold-out {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        background: #cccccc !important;
+        border: 1px solid #808080 !important;
+      }
+
+      /* HOMEPAGE SPECIFIC: Image banner elements */
+      html body .banner,
+      html body .banner__media,
+      html body .banner__box,
+      html body .banner__content,
+      html body .banner__buttons button,
+      html body .banner .button,
+      html body [class*="banner"] {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* Collage/multimedia items - homepage */
+      html body .collage__item,
+      html body .collage__card,
+      html body .multimedia-collage__item,
+      html body .multicolumn-card,
+      html body .column__content-wrapper,
+      html body .columns__heading {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* Video and play button - homepage */
+      html body .deferred-media,
+      html body .deferred-media__poster-button,
+      html body video,
+      html body [class*="video"],
+      html body [class*="play"] {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* ============================================
+         TARGETED FIX: Header nav links must be blue
+         The .header__menu-item class overrides generic a selectors
+         ============================================ */
+      html body .header__menu-item,
+      html body header .header__menu-item,
+      html body header nav .header__menu-item,
+      html body .header__menu-item.link--text,
+      html body header a.header__menu-item,
+      html body nav a.header__menu-item,
+      html body .list-menu__item.header__menu-item,
+      html body a.list-menu__item,
+      html body header .list-menu__item a {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+      html body .header__menu-item:hover,
+      html body header .header__menu-item:hover {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+
+      /* TARGETED FIX: link--text class forces text color - override to blue */
+      html body .link--text,
+      html body a.link--text,
+      html body .link--text:hover,
+      html body header .link--text,
+      html body nav .link--text,
+      html body .header a.link--text {
+        color: #0000ee !important;
+        text-decoration: underline !important;
+      }
+
+      /* ============================================
+         TARGETED FIX: Banner content container with gradient
+         The .gradient class may affect border-radius
+         ============================================ */
+      html body .gradient,
+      html body .banner__box.gradient,
+      html body .content-container.gradient,
+      html body [class*="gradient"],
+      html body .banner .banner__box.gradient {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* TARGETED FIX: Button inside banner - including button--primary/secondary */
+      html body .banner .button,
+      html body .banner .button--primary,
+      html body .banner .button--secondary,
+      html body .banner__buttons .button,
+      html body .banner__buttons a.button,
+      html body .banner a.button--primary,
+      html body .banner a.button--secondary,
+      html body .image-banner .button,
+      html body [id*="Banner"] .button,
+      html body [id*="Banner"] a.button {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        background: #d4d4d4 !important;
+        border: 2px outset #808080 !important;
+      }
+
+      /* ============================================
+         TARGETED FIX: Product badges - SOLD OUT, SALE
+         Must be completely square (no pill shape)
+         ============================================ */
+      html body span.badge,
+      html body .card span.badge,
+      html body .card__badge span,
+      html body .card__badge-list span,
+      html body .badge[class*="sold"],
+      html body .badge[class*="sale"],
+      html body span[class*="sold-out"],
+      html body span[class*="sale"],
+      html body .price__badge,
+      html body .price__badge-sale,
+      html body .price__badge-sold-out,
+      html body .card .badge,
+      html body .product-card .badge,
+      html body [class*="badge"]:not(input) {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        -moz-border-radius: 0 !important;
+        background: #cccccc !important;
+        border: 1px solid #808080 !important;
+        padding: 2px 6px !important;
+      }
+
+      /* TARGETED FIX: Gift card page elements */
+      html body .product-form__buttons .button,
+      html body .product-form .button,
+      html body .product-form button,
+      html body .product-form__submit,
+      html body .product-form input[type="radio"] + label,
+      html body variant-radios label,
+      html body .product__info-wrapper button,
+      html body .product__info-wrapper .button {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* TARGETED FIX: Currency/localization selector */
+      html body localization-form .disclosure__button,
+      html body .footer localization-form button,
+      html body .header localization-form button,
+      html body footer localization-form button,
+      html body header localization-form button {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+        background: #d4d4d4 !important;
+        border: 2px outset #808080 !important;
+      }
+
+      /* TARGETED FIX: Search button in header */
+      html body .header__icon--search,
+      html body header button[class*="search"],
+      html body .header__search button,
+      html body header .search button {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* TARGETED FIX: Share button on product page */
+      html body .share-button,
+      html body .share-button__button,
+      html body share-button button,
+      html body details.share-button summary {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* TARGETED FIX: Quantity buttons */
+      html body quantity-input,
+      html body quantity-input button,
+      html body .quantity__button,
+      html body .quantity button,
+      html body button[name*="plus"],
+      html body button[name*="minus"] {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+
+      /* FINAL OVERRIDE: All content-container and banner__box with ::after pseudo */
+      html body .content-container,
+      html body .content-container::before,
+      html body .content-container::after,
+      html body .banner__box,
+      html body .banner__box::before,
+      html body .banner__box::after {
+        border-radius: 0 !important;
+        -webkit-border-radius: 0 !important;
+      }
+    </style>
   </body>
 </html>

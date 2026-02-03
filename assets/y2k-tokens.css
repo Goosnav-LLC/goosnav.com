@@ -99,7 +99,7 @@ body {
   font-size: 11px !important;
   line-height: 1.4 !important;
   color: var(--y2k-gray-darkest) !important;
-  background: var(--y2k-white) !important;
+  background: #f0f0f0 !important; /* Classic gray background like eBay 2004 */
 }
 
 /* ==========================================================================
@@ -388,25 +388,27 @@ summary:focus-visible,
 .header__menu-item {
   font-family: Arial, Helvetica, sans-serif !important;
   font-size: 11px !important;
-  font-weight: bold !important;
-  padding: 4px 12px !important;
+  font-weight: normal !important;
+  padding: 2px 8px !important;
   margin: 0 !important;
-  text-decoration: none !important;
-  text-transform: uppercase !important;
+  text-decoration: underline !important;
+  text-transform: none !important;
   letter-spacing: 0 !important;
   border: none !important;
-  color: #fff !important;
+  background: none !important;
+  color: #0000ee !important;
 }
 
-/* Navigation - eBay 2004 Dark Blue Tab Bar */
+/* Navigation - Plain blue underlined links (classic web style) */
 .header__inline-menu .list-menu--inline > li .header__menu-item {
-  background: #003D7A !important; /* eBay 2004 dark blue */
-  color: #FFFFFF !important;
-  border-right: 1px solid #002952 !important;
-  padding: 6px 12px !important;
+  background: none !important;
+  color: #0000ee !important;
+  border: none !important;
+  padding: 2px 8px !important;
   font-size: 11px !important;
-  font-weight: bold !important;
+  font-weight: normal !important;
   text-transform: none !important;
+  text-decoration: underline !important;
 }
 
 .header__inline-menu .list-menu--inline > li:last-child .header__menu-item {
@@ -414,16 +416,17 @@ summary:focus-visible,
 }
 
 .header__inline-menu .list-menu--inline > li .header__menu-item:hover {
-  background: #0052A3 !important; /* Lighter blue hover */
+  background: none !important;
+  color: #cc3333 !important;
   opacity: 1 !important;
   filter: none !important;
 }
 
 .header__inline-menu .list-menu--inline > li .header__menu-item.active,
 .header__inline-menu .list-menu--inline > li.active .header__menu-item {
-  background: #FFFFFF !important;
-  color: #003D7A !important;
-  border-bottom: 3px solid #003D7A !important;
+  background: none !important;
+  color: #0000ee !important;
+  border: none !important;
   font-weight: bold !important;
 }
 
@@ -593,11 +596,11 @@ summary:focus-visible,
 
 /* Main content area with border */
 main {
-  background: #fff !important;
+  background: #f0f0f0 !important; /* Match body gray */
 }
 
 .gradient {
-  background: #fff !important;
+  background: #f0f0f0 !important; /* Match body gray */
 }
 
 /* ==========================================================================

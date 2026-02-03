@@ -9,3 +9,12 @@ ehthumbs.db
 Thumbs.db
 .shopify
 node_modules/
+.env
+scripts/eval-screenshots/
+scripts/eval-results.txt
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.webp

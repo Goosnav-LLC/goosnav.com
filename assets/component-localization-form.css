@@ -62,7 +62,7 @@
 }
 
 .localization-form__select {
-  border-radius: var(--inputs-radius-outset);
+  border-radius: 0;
   position: relative;
   margin-bottom: 1.5rem;
   padding-left: 1rem;
@@ -132,7 +132,7 @@
   transform: translateY(-1rem);
   z-index: 2;
   background-color: rgb(var(--color-background));
-  border-radius: var(--popup-corner-radius);
+  border-radius: 0;
   box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius)
     rgba(var(--color-shadow), var(--popup-shadow-opacity));
   max-height: 27.5rem;
